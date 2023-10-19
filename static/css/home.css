@@ -1,0 +1,245 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #1E050D; 
+    cursor: none;   
+}
+
+
+
+.rounded {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fa768e;
+    border-radius: 50%;
+    transition: all 0.1s linear;
+}
+
+.pointed {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.rounded, .pointed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events:none;
+}
+
+.imbanner {
+    margin-top: 0;
+    background-image: url("/static/imgs/banner6.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+
+
+.our-story {
+    background-color: #1E050D;
+    height: 100vh;
+    color: #fff;
+}
+
+.our-story-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    /* background: #1E050D; */
+    /* background-image: url("/static/imgs/coffee-orange-powerpoint-background_99a38eddc1__960_540.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+     */
+}
+
+
+.box{
+    width: 30%;
+    height: auto;
+    background-color: #1E050D;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* backdrop-filter: blur(10px); */
+    /* border-radius: 5px; */
+    /* opacity: 0.7; */
+    /* box-shadow: 0 0 10px rgba(57,15,16,0.5); */
+    border-radius: 30px;
+    padding: 20px;
+    position: absolute;
+    top: 55%;
+        font-family: garamond;
+    left: 40%;
+    transform: translate(-50%,-50%);
+    word-spacing: 5px;
+}
+
+.box h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    text-align:center;
+    font-family: sylfaen;
+
+}
+
+.box h3{
+    margin: 20px 20px;
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align:center;
+        font-family: lucida handwriting;
+}
+
+
+
+.box2 {
+    margin-top: -50;
+    background-color: #FECB92;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+    background: #1E050D;
+    /* background-image: url("/static/imgs/coffee-orange-powerpoint-background_99a38eddc1__960_540.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+     */
+}
+
+.review-container {
+    background: #1E050D;
+    color: wheat;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60vh;
+}
+
+.title-review h1,h2{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    color: #FECB92;
+    font-family: lucida handwriting;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+}
+
+.review-card {
+    background-color: #1F1B18;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    perspective: 1000px;
+    z-index: 0;
+    /* cursor: pointer; */
+    border-radius: 10px;
+}
+
+.review-card img {
+    margin-bottom: 10px;
+    padding-bottom: 20px 10px 20px 0;
+    border-radius: 50%;
+}
+.card-front{
+    color: black;
+    border-radius:10px;
+}
+
+
+.card-front, .card-back {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.review-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.review-card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+
+.random{
+    color: #FECB92;
+    height: 30vh;
+    display: flex;
+    background: #000;
+}
+
+.icons-home {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.icons-home li {
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+.body-review{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FECB92;
+}
+
+.card-image{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 3px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid black;
+}
