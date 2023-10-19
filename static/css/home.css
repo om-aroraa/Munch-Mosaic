@@ -67,7 +67,7 @@ body{
 .box{
     width: 30%;
     height: auto;
-    background-color: #1E050D;
+    /* background-color: #1E050D; */
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
@@ -88,10 +88,10 @@ body{
 
 .box h1{
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 900;
     text-align:center;
-    font-family: papyrus;
+    font-family: lucida handwriting;
 
 }
 
