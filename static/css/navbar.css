@@ -117,9 +117,9 @@ body {
 .login-button:hover {
     background-color: white;
     /* White background color on hover */
-    color: #4CAF50;
+    color: #000000;
     /* Green text color on hover */
-    border: 2px solid #4CAF50;
+    border: 2px solid #000000;
     /* Green border on hover */
     cursor: none;
 }
