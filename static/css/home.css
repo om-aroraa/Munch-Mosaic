@@ -154,7 +154,7 @@ body{
     perspective: 1000px;
     z-index: 0;
     /* cursor: pointer; */
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .review-card img {
@@ -162,11 +162,11 @@ body{
     padding-bottom: 20px 10px 20px 0;
     width: 400px;
     height: 450px;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 .card-front{
     color: black;
-    border-radius:10px;
+    border-radius:30px;
 }
 
 
@@ -185,7 +185,7 @@ body{
     background-color: #1F1B18;
     color: #f1f1f1;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .review-card:hover .card-front {
