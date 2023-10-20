@@ -8,14 +8,28 @@
 
 } */
 
+.imbanner{
+    background-image: url(/static/imgs/restaurant-bar-coffee-shop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+
 /* === Menu Navigation bar */
 
 .navbody {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 10vh;
+    align-items: start;
+    height: 29vh;
     margin: 0;
+    background-image: url(/static/imgs/bgimg.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     background-color: #501d1d;
     font-family: garamond;
     font-size: 1.5em;
@@ -42,10 +56,10 @@
     align-items: center;
 }
 
-.nav-left a {
+.nav-left span {
     cursor: pointer;
     margin-right: auto;
-    text-decoration: none;
+    text-decoration: underline rgb(0, 154, 95);
     color: #ffffff;
     /* Pushes "Beverages" to the left */
 }
