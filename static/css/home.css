@@ -5,7 +5,7 @@ body {
     cursor: none;
 }
 
-
+/* ===cursor ==== */
 
 .rounded {
     width: 30px;
@@ -31,6 +31,7 @@ body {
     z-index: 1000;
     pointer-events: none;
 }
+/* === dont touch its working === */
 .imbanner {
     margin-top: 0;
     background-image: url("/static/imgs/banner6.jpg");
@@ -43,25 +44,7 @@ body {
     /* Set z-index to ensure it appears below our-story */
 }
 
-.our-story {
-    background-color: #1E050D;
-    width: 100%;
-    top: 100vh;
-    height: 100vh;
-    color: #fff;
-    position: relative;
-    /* Change position to relative */
-    z-index: 1;
-    /* Set z-index to ensure it appears above imbanner */
-}
-
-.our-story-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
+/* === dont touch its working === */
 .box {
     width: 30%;
     height: auto;
@@ -255,3 +238,84 @@ ul {
     object-fit: cover;
     border: 2px solid black;
 }
+
+
+.banner {
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    top: 100vh;
+}
+/* change color and font here */
+.text-box {
+    max-width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: wheat;
+}
+
+.text-box h1 {
+    margin: 0 0 10px;
+    font-size: 3em;
+    font-family: Footlight MT Light;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.text-box h2 {
+    margin: 0 0 10px;
+    font-size: 2.5em;
+    font-family: Footlight MT Light;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.text-box p {
+    margin: 0 0 10px;
+    font-size: 1em;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px #000000;
+
+}
+
+.image-box {
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.image-box img {
+    width: 70vh;
+    display: block;
+    margin-bottom: -20px;
+}
+
+.image-2 {
+    position: absolute;
+    top: 100px;
+    right: 150px;
+    width: 100px;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 30px;
+    /* z-index: -1; */
+}
+
+.image-1 {
+    border-radius: 30px;
+    height: 70vh;
+    /* z-index: -1; */
+}
+

@@ -163,8 +163,8 @@ body {
 }
 
 .card-img {
-    width: 100%;
-    height: 250px;
+    width: 25rem;
+    height: 20rem;
     border-radius: 1.5rem;
 }
 
@@ -324,7 +324,7 @@ body {
     }
 
     .card-img {
-        width: 316px;
+        width: 340px;
         padding-inline: 2.5rem;
     }
 }
