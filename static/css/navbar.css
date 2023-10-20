@@ -4,25 +4,20 @@ body {
     cursor: none;
 }
 
-/* Basic styling for the navbar */
 .navbar {
     
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: #313D70; */
-    /* transperant the background */
     background-color: rgba(19, 23, 24, 0.9);
     padding: 10px;
     color: white;
     
 }
 
-/* Style for the logo */
 .logo {
     order: -1;
     font-family: dita sweet;
-    /* Move logo to the left corner */
 }
 
 .logo img {
@@ -43,13 +38,10 @@ body {
     color: white;
 }
 
-/* add visited color */
 .menu a:visited {
     color: white;
 }
 
-
-/* Style for menu items */
 .menu li {
     display: inline-block;
     margin: 0 10px;
@@ -59,14 +51,12 @@ body {
     cursor: no;
 }
 
-/* Style for the underline */
 .menu li::after {
     content: '';
     position: absolute;
     width: 100%;
     height: 2px;
     background-color: #e2153b;
-    /* Color of the underline */
     bottom: 0;
     left: 0;
     transform: scaleX(0);
@@ -74,52 +64,32 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Hover effect */
 .menu li:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
     cursor: none;
 }
 
-
-
-/* Style for the login button */
 .login-button {
     background-color: #A40E29;
-    /* Green background color */
     border: none;
-    /* Remove border */
     color: white;
-    /* White text color */
     padding: 10px 20px;
-    /* Padding for text */
     text-align: center;
-    /* Center text */
     text-decoration: none;
-    /* Remove underline */
     display: inline-block;
-    /* Display as inline-block */
     font-size: 16px;
-    /* Font size */
     margin: 4px 2px;
-    /* Margin between buttons */
     cursor: pointer;
-    /* Cursor on hover */
     border-radius: 8px;
-    /* Rounded corners */
     transition-duration: 0.4s;
-    /* Smooth transition on hover */
     font-family: garamond, Helvetica, sans-serif;
     font-weight: bold;
 }
 
-/* Hover effect */
 .login-button:hover {
     background-color: white;
-    /* White background color on hover */
     color: #000000;
-    /* Green text color on hover */
     border: 2px solid #000000;
-    /* Green border on hover */
     cursor: none;
 }

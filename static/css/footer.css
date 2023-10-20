@@ -7,8 +7,9 @@
 
 .logo-footer img {
     display: block;
+    width: 600px;
+    height: 100PX;
     margin: 0 auto 20px;
-    max-width: 100px;
 }
 
 .sections {
