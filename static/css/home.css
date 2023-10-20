@@ -31,7 +31,6 @@ body {
     z-index: 1000;
     pointer-events: none;
 }
-
 .imbanner {
     margin-top: 0;
     background-image: url("/static/imgs/banner6.jpg");
@@ -39,24 +38,29 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-
+    width: 100%;
+    position: fixed;
+    /* Set z-index to ensure it appears below our-story */
 }
-
 
 .our-story {
     background-color: #1E050D;
+    width: 100%;
+    top: 100vh;
     height: 100vh;
     color: #fff;
+    position: relative;
+    /* Change position to relative */
+    z-index: 1;
+    /* Set z-index to ensure it appears above imbanner */
 }
 
 .our-story-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
 }
-
 
 .box {
     width: 30%;
@@ -123,6 +127,9 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
+    width: 100%;
+    position: relative;
+    top: 100vh;
 }
 
 .cover h1 {

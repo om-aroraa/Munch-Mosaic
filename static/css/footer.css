@@ -3,6 +3,8 @@
     color: #fff;
     text-align: center;
     padding: 20px;
+    position: relative;
+    bottom: -100vh;
 }
 
 .logo-footer img {
