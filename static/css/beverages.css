@@ -59,7 +59,7 @@
 .nav-left span {
     cursor: pointer;
     margin-right: auto;
-    text-decoration: underline rgb(0, 154, 95);
+    text-decoration: underline rgb(107, 2, 2);
     color: #ffffff;
     /* Pushes "Beverages" to the left */
 }

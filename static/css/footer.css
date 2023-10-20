@@ -1,5 +1,5 @@
 .site-footer {
-    background-color: #1E050D;
+    background-color: #130308;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -9,9 +9,10 @@
 
 .logo-footer img {
     display: block;
-    width: 600px;
-    height: 100PX;
+    width: 300px;
+    height: 50PX;
     margin: 0 auto 20px;
+    border-radius: 20px;
 }
 
 .sections {
@@ -31,8 +32,10 @@
 .contact-info h3,
 .font-awesome-icons h3,
 .working-hours h3 {
-    font-size: 1.2em;
+    font-size: 1.9em;
     margin-bottom: 10px;
+    font-family: Footlight MT Light;
+    color: rgb(129, 6, 6);
 }
 
 .icons {
