@@ -1,3 +1,109 @@
+/* body{
+    margin: 0;
+    padding: 0;
+    background-image: url(/static/imgs/bgimg.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+} */
+
+/* === Menu Navigation bar */
+
+.navbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    margin: 0;
+    background-color: #501d1d;
+    font-family: garamond;
+    font-size: 1.5em;
+    color: #ffffff;
+    /* Background color for the body */
+}
+
+.navbar-2 {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(31, 27, 24, 0.8);
+    /* Almost transparent background */
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left a {
+    cursor: pointer;
+    margin-right: auto;
+    text-decoration: none;
+    color: #ffffff;
+    /* Pushes "Beverages" to the left */
+}
+
+.nav-center a,
+.dropdown-content a {
+    cursor: pointer;
+    margin: 0 10px;
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    /* Pushes "COFFEES" to the center */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    /* drop down menu background color */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #6edc00;
+    /* drop down menu text color */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-right a {
+    cursor: pointer;
+    margin-left: auto;
+    text-decoration: none;
+    color: #ffffff;
+    /* Pushes "Home" to the right */
+}
+
+
+/* === Actual Body === */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1F1B18;
+    color: #fa768e;
+    cursor: none;
+}
+
+
+/* === Cursor === */
+
 .rounded {
     width: 30px;
     height: 30px;
@@ -23,26 +129,26 @@
     pointer-events: none;
 }
 
-
+/* === Main menu made of Grid === */
 
 .container-all {
-    display:grid;
+    display: grid;
     place-items: center;
-    margin-inline : 1.5rem;
+    margin-inline: 1.5rem;
     padding-block: 5rem;
 }
 
-.card-container{
+.card-container {
     display: grid;
     row-gap: 3.5rem;
 }
 
-.card-article{
+.card-article {
     position: relative;
     overflow: hidden;
 }
 
-.card-img{
+.card-img {
     width: 100%;
     height: 250px;
     border-radius: 1.5rem;
@@ -51,7 +157,7 @@
 
 .card-data {
     width: 280px;
-    background: #fff;
+    background: #000000;
     padding: 1.5rem 2rem;
     box-shadow: 0 8px 24px hsla(0, 0, 0, .15);
     border-radius: 1rem;
@@ -71,7 +177,7 @@
     margin-bottom: .25rem;
 }
 
-.card-title{
+.card-title {
     font-size: var(--h2--font-size);
     font-weight: 500;
     color: var(--title-color);
@@ -79,19 +185,27 @@
 }
 
 .card-button {
-    text-decoration: none;
     font-size: var(--small--font-size);
     font-weight: 500;
     color: var(--first-color);
+    background-color: rgb(203, 75, 96);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 
-.card-button :hover{
-    text-decoration: underline;
+/* === on hover css of grid main menu === */
+
+.card-button:hover {
+    background-color: #731846;
+    /* A slightly different shade of pink on hover */
 }
 
 
-.card-article:hover .card-data{
+.card-article:hover .card-data {
     animation: show-data 1s forwards;
     opacity: 1;
     transition: opacity .3s;
@@ -106,72 +220,78 @@
     animation: show-overflow 2s forwards;
 }
 
-.card-article:not(:hover) .card-data{
+.card-article:not(:hover) .card-data {
     animation: remove-data 1s forwards;
 }
 
 
-/* card animations */
+/* ==== card animations === */
 
 @keyframes show-data {
-    50%{
+    50% {
         transform: translateY(-10rem);
     }
-    100%{
+
+    100% {
         transform: translateY(-7rem);
     }
 }
 
 
 @keyframes remove-overflow {
-    to{
+    to {
         overflow: initial;
     }
 }
 
 @keyframes remove-data {
-    0%{
+    0% {
         transform: translateY(-7rem);
     }
-    50%{
+
+    50% {
         transform: translateY(-10rem);
     }
-    100%{
+
+    100% {
         transform: translateY(.5rem);
     }
 }
 
 @keyframes show-overflow {
-    0%{
+    0% {
         overflow: initial;
         pointer-events: none;
     }
-    50%{
+
+    50% {
         overflow: hidden;
         /* pointer-events: none; */
     }
 }
 
-/* ====  breakpoints ==== */
 
+
+
+
+/* ====  breakpoints ==== */
 
 /* for smaller devices */
 @media screen and (max-width: 430px) {
-    .container-all{
+    .container-all {
         margin-inline: 1rem;
     }
 
-    .card-data{
+    .card-data {
         width: 250px;
         padding: 1rem;
     }
 }
 
-
 /* for medium devices */
 
 @media screen and (min-width: 768px) {
-    .card-container{
+    .card-container {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1.5rem;
     }
@@ -180,15 +300,16 @@
 /* for large devices */
 
 @media screen and (min-width: 1120px) {
-    .container-all{
+    .container-all {
         height: 100vh;
+
     }
 
-    .card-container{
+    .card-container {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .card-img{
+    .card-img {
         width: 316px;
         padding-inline: 2.5rem;
     }
