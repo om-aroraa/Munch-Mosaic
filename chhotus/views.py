@@ -25,8 +25,8 @@ def cart(request):
 def login(request):
     return render(request, 'login.html')
 
-def signup(request):
-    return render(request, 'signup.html')
+def register(request):
+    return render(request, 'register.html')
 
 def checkout(request):
     return render(request, 'checkout.html')
@@ -36,3 +36,6 @@ def footer(request):
 
 def cursor(request):
     return render(request, 'cursor.html')
+
+def adminmenu(request):
+    return render(request, 'adminmenu.html')

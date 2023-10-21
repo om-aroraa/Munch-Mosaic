@@ -19,16 +19,15 @@ from .views import *
 
 urlpatterns = [
     path("", home, name='home'),
-    path("navbar", navbar, name="navbar"),
-    path("beverages", beverages, name="beverages"),
-    path("snacks", snacks, name="snacks"),
-    path("desserts", desserts, name="desserts"),
-    path("cakes", cakes, name="cakes"),
-    path("cart", cart, name="cart"),
-    path("checkout", checkout, name="checkout"),
-    path("login", login, name="login"),
-    path("signup", signup, name="signup"),
-    path("cursor", cursor, name="cursor"),
-
-
+    path("navbar/", navbar, name="navbar"),
+    path("beverages/", beverages, name="beverages"),
+    path("snacks/", snacks, name="snacks"),
+    path("desserts/", desserts, name="desserts"),
+    path("cakes/", cakes, name="cakes"),
+    path("cart/", cart, name="cart"),
+    path("checkout/", checkout, name="checkout"),
+    path("login/", login, name="login"),
+    path("register/", register, name="register"),   
+    path("cursor/", cursor, name="cursor"),
+    path("adminmenu/", adminmenu, name="adminmenu"),
 ]
