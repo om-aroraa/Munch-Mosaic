@@ -1,0 +1,348 @@
+/*  i want smooth scorll behavior of html page, add smoothness and transiton for slow move */
+
+html {
+    scroll-behavior: smooth;
+    transition: all 0.9s ease-in;
+}
+
+/* ==== collecting banners here of all items === */
+
+
+.imbanner {
+    background-image: url(/static/imgs/restaurant-bar-coffee-shop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+#cakes-bgimg {
+    background-image: url(/static/imgs/cakes.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    height: 25vh;
+}
+
+#beverages-bgimg{
+    background-image: url(/static/imgs/beverages.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 25vh;
+}
+ 
+#snacks-bgimg {
+    background-image: url(/static/imgs/snacks2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 25vh;
+}
+
+#deserts-bgimg {
+    background-image: url(/static/imgs/desserts2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 25vh;
+}
+
+
+/* === Menu Navigation bar */
+
+
+
+.navbody {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 29vh;
+    margin: 0;
+    background-image: url(/static/imgs/beveragesbanner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #501d1d;
+    font-family: garamond;
+    color: #000000;
+    /* Background color for the body */
+}
+
+
+
+.navbar-2 {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(31, 27, 24, 0.8);
+    /* Almost transparent background */
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.nav-left span {
+    cursor: pointer;
+    margin-right: auto;
+    color: #ffffff;
+    font-family: Footlight MT Light;
+    letter-spacing: 2px;
+    /* Pushes "Beverages" to the left */
+}
+
+.nav-center a,
+.dropdown-content a {
+    cursor: pointer;
+    margin: 0 10px;
+    position: relative;
+    text-decoration: none;
+    color: #8e4444;
+    /* Pushes "COFFEES" to the center */
+}
+
+.nav-center a{
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    /* drop down menu background color */
+    min-width: 140px;
+    border-radius: 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-size: .5em;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #ffffff;
+    /* drop down menu text color */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-right a {
+    cursor: pointer;
+    margin-left: auto;
+    text-decoration: none;
+    color: #ffffff;
+    /* Pushes "Home" to the right */
+}
+
+
+/* === Actual Body === */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1F1B18;
+    color: #fa768e;
+    cursor: none;
+}
+
+
+/* === Main menu made of Grid === */
+
+.container-all {
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+}
+
+.card-container {
+    display: grid;
+    row-gap: 3.5rem;
+}
+
+.card-article {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 25rem;
+    height: 20rem;
+    border-radius: 1.5rem;
+}
+
+
+.card-data {
+    width: 280px;
+    background: #000000;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0, 0, .15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+
+}
+
+.card-description {
+    display: block;
+    font-size: var(--small--font-size);
+    margin-bottom: .25rem;
+}
+
+.card-title {
+    font-size: var(--h2--font-size);
+    font-weight: 500;
+    color: var(--title-color);
+    margin-bottom: .75rem;
+}
+
+.card-button {
+    font-size: var(--small--font-size);
+    font-weight: 500;
+    color: var(--first-color);
+    background-color: rgb(203, 75, 96);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+/* === on hover css of grid main menu === */
+
+.card-button:hover {
+    background-color: #731846;
+    /* A slightly different shade of pink on hover */
+}
+
+
+.card-article:hover .card-data {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+
+.card-article:hover {
+    animation: remove-overflow 2s forwards;
+}
+
+.card-article:not(:hover) {
+    animation: show-overflow 2s forwards;
+}
+
+.card-article:not(:hover) .card-data {
+    animation: remove-data 1s forwards;
+}
+
+
+/* ==== card animations === */
+
+@keyframes show-data {
+    50% {
+        transform: translateY(-10rem);
+    }
+
+    100% {
+        transform: translateY(-7rem);
+    }
+}
+
+
+@keyframes remove-overflow {
+    to {
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data {
+    0% {
+        transform: translateY(-7rem);
+    }
+
+    50% {
+        transform: translateY(-10rem);
+    }
+
+    100% {
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow {
+    0% {
+        overflow: initial;
+        pointer-events: none;
+    }
+
+    50% {
+        overflow: hidden;
+        /* pointer-events: none; */
+    }
+}
+
+
+
+
+
+/* ====  breakpoints ==== */
+
+/* for smaller devices */
+@media screen and (max-width: 430px) {
+    .container-all {
+        margin-inline: 1rem;
+    }
+
+    .card-data {
+        width: 250px;
+        padding: 1rem;
+    }
+}
+
+/* for medium devices */
+
+@media screen and (min-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.5rem;
+    }
+}
+
+/* for large devices */
+
+@media screen and (min-width: 1120px) {
+    .container-all {
+        height: 50vh;
+
+    }
+
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card-img {
+        width: 340px;
+        padding-inline: 2.5rem;
+        border-radius: 2.5rem;
+    }
+}

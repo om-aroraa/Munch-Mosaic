@@ -1,17 +1,11 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+from django.http import HttpResponse
 
 def navbar(request):
     return render(request, 'navbar.html')
 
 def home(request):
     return render(request, 'home.html')
-
-def about(request):
-    return render(request, 'about.html')
-
-def contact(request):
-    return render(request, 'contact.html')
 
 def beverages(request):
     return render(request, 'beverages.html')
@@ -22,11 +16,11 @@ def snacks(request):
 def desserts(request):
     return render(request, 'desserts.html')
 
+def cakes(request):
+    return render(request, 'cakes.html')
+
 def cart(request):
     return render(request, 'cart.html')
-
-def meals(request):
-    return render(request, 'meals.html')
 
 def login(request):
     return render(request, 'login.html')
@@ -39,3 +33,6 @@ def checkout(request):
 
 def footer(request):
     return render(request, 'footer.html')
+
+def cursor(request):
+    return render(request, 'cursor.html')
