@@ -25,15 +25,15 @@
     align-items: start;
     height: 29vh;
     margin: 0;
-    background-image: url(/static/imgs/bgimg.avif);
+    background-image: url(/static/imgs/beveragesbanner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
+    
     background-color: #501d1d;
     font-family: garamond;
     font-size: 1.5em;
-    color: #ffffff;
+    color: #000000;
     /* Background color for the body */
 }
 
@@ -59,8 +59,9 @@
 .nav-left span {
     cursor: pointer;
     margin-right: auto;
-    text-decoration: underline rgb(107, 2, 2);
     color: #ffffff;
+    font-family: Footlight MT Light;
+    letter-spacing: 2px;
     /* Pushes "Beverages" to the left */
 }
 
@@ -70,16 +71,17 @@
     margin: 0 10px;
     position: relative;
     text-decoration: none;
-    color: #ffffff;
+    color: #8e4444;
     /* Pushes "COFFEES" to the center */
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #000000;
     /* drop down menu background color */
-    min-width: 160px;
+    min-width: 140px;
+    border-radius: 30px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
@@ -88,7 +90,7 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    color: #6edc00;
+    color: #ffffff;
     /* drop down menu text color */
 }
 

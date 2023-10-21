@@ -105,7 +105,7 @@ body {
 
 .cover {
     display: block;
-    background-image: url("/static/imgs/banner11.jpg");
+    background-image: url("/static/imgs/banner5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -124,27 +124,28 @@ body {
     padding-top: 10px;
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 5px;
-    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 1px #0a0a0a;
 }
 
 .cover h2 {
-    color: rgb(240, 17, 102);
-    font-family: Lucida Handwriting;
+    color: #097554;
+    font-family: Footlight MT Light;
     font-style: italic;
-    font-size: 25px;
+    text-decoration: underline;
+    font-size: 30px;
     text-align: center;
     margin-top: 0;
     padding-top: 40px;
     text-transform: lowercase;
     font-weight: 500;
     letter-spacing: 3px;
-    text-shadow: 2px 2px 4px #0a0a0a;
+    text-shadow: 1px 1px 1px #000000;
 }
 
 
 .review-card {
-    width: 400px;
+    width: 370px;
     height: 400px;
     text-align: center;
     perspective: 1000px;
@@ -155,7 +156,7 @@ body {
 .review-card img {
     margin-bottom: 10px;
     padding-bottom: 20px 10px 20px 0;
-    width: 400px;
+    width: 370px;
     height: 450px;
     border-radius: 30px;
 
@@ -241,7 +242,7 @@ ul {
 
 
 .banner {
-    background-color: black;
+    background-color: rgb(10, 1, 1);
     color: white;
     height: 100vh;
     display: flex;
@@ -257,7 +258,7 @@ ul {
     max-width: 40%;
     padding: 20px;
     box-sizing: border-box;
-    color: wheat;
+    color: rgb(79, 42, 42);
 }
 
 .text-box h1 {
@@ -265,8 +266,9 @@ ul {
     font-size: 3em;
     font-family: Footlight MT Light;
     text-transform: uppercase;
+    color: #f4e9e9;
     font-weight: 500;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     text-shadow: 2px 2px 4px #000000;
 }
 
@@ -274,17 +276,19 @@ ul {
     margin: 0 0 10px;
     font-size: 2.5em;
     font-family: Footlight MT Light;
-    text-transform: uppercase;
+    font-style: italic;
+    text-transform: lowercase;
     font-weight: 500;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     text-shadow: 2px 2px 4px #000000;
 }
 
 .text-box p {
     margin: 0 0 10px;
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 100;
     text-shadow: 2px 2px 4px #000000;
+    color: #faf7f7;
 
 }
 
@@ -305,7 +309,7 @@ ul {
 .image-2 {
     position: absolute;
     top: 100px;
-    right: 150px;
+    right: 100px;
     width: 100px;
     height: 70vh;
     object-fit: cover;
