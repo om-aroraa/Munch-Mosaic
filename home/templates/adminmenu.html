@@ -14,7 +14,8 @@
     <div class="menu-body">
         <div class="form-container">
             <h1>Modify Menu</h1>
-            <form>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="productName">Savory Delight :</label>
                     <input type="text" id="productName" name="productName" required>
@@ -33,30 +34,113 @@
                 </div>
                 <div class="form-group">
                     <label for="type1">Main Category:</label>
-                    <select id="type1" name="type1">
-                        <option value="option1">Beverages</option>
-                        <option value="option1">Desserts</option>
-                        <option value="option2">Snacks</option>
-                        <option value="option2">Cakes</option>
+                    <select id="type1" name="category" onchange="showtype2()" required>
+                        <option value="option0" disabled selected>Select a Category</option>
+                        <option value="beverages">Beverages</option>
+                        <option value="desserts">Desserts</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="cakes">Cakes</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="type2">Sub-Category:</label>
-                    <select id="type2" name="type2">
-                        <option value="option3">Hot Coffee</option>
-                        <option value="option4">Cold Coffee</option>
-                        <option value="option4">Mocktails</option>
-                        <option value="option4">Truffle</option>
-                        <option value="option4">Pudding</option>
-                        <option value="option4">Waffles</option>
-                        <option value="option4">Cakes</option>
-                        <option value="option4">Pastries</option>
+                    <label id="label2" style="display: none;" id="type2">Sub-Category:</label>
+                    <select id="type2" style="display: none;" name="subcategory" required>
+                        <option value="option0" disabled selected>Select a Sub-Category</option>
+                        <option value="hotcoffee" style="display: none;" name="bev">Hot Coffee</option>
+                        <option value="coldcoffee" style="display: none;" name="bev">Cold Coffee</option>
+                        <option value="mocktails" style="display: none;" name="bev">Mocktails</option>
+                        <option value="truffle" style="display: none;" name="des">Truffle</option>
+                        <option value="pudding" style="display: none;" name="des">Pudding</option>
+                        <option value="waffles" style="display: none;" name="snacks">Waffles</option>
+                        <option value="cakes" style="display: none;" name="cakes">Cakes</option>
+                        <option value="pastries" style="display: none;" name="cakes">Pastries</option>
                     </select>
                 </div>
                 <button class="btn">Modify Menu</button>
             </form>
         </div>
     </div>
+
+    <script type="text/javascript">
+        const type2 = document.getElementById("type2");
+        const label2 = document.getElementById("label2");
+        function showtype2() {
+            label2.style.display = "block";
+            type2.style.display = "block";
+            let value = document.getElementById("type1").value;
+            if (value == "beverages") {
+                let bev = document.getElementsByName("bev");
+                for (let i = 0; i < bev.length; i++) {
+                    bev[i].style.display = "block";
+                }
+                let des = document.getElementsByName("des");
+                for (let i = 0; i < des.length; i++) {
+                    des[i].style.display = "none";
+                }
+                let snacks = document.getElementsByName("snacks");
+                for (let i = 0; i < snacks.length; i++) {
+                    snacks[i].style.display = "none";
+                }
+                let cakes = document.getElementsByName("cakes");
+                for (let i = 0; i < cakes.length; i++) {
+                    cakes[i].style.display = "none";
+                }
+            } else if (value == "desserts") {
+                let des = document.getElementsByName("des");
+                for (let i = 0; i < des.length; i++) {
+                    des[i].style.display = "block";
+                }
+                let bev = document.getElementsByName("bev");
+                for (let i = 0; i < bev.length; i++) {
+                    bev[i].style.display = "none";
+                }
+                let snacks = document.getElementsByName("snacks");
+                for (let i = 0; i < snacks.length; i++) {
+                    snacks[i].style.display = "none";
+                }
+                let cakes = document.getElementsByName("cakes");
+                for (let i = 0; i < cakes.length; i++) {
+                    cakes[i].style.display = "none";
+                }
+            } else if (value == "snacks") {
+                let snacks = document.getElementsByName("snacks");
+                for (let i = 0; i < snacks.length; i++) {
+                    snacks[i].style.display = "block";
+                }
+                let bev = document.getElementsByName("bev");
+                for (let i = 0; i < bev.length; i++) {
+                    bev[i].style.display = "none";
+                }
+                let des = document.getElementsByName("des");
+                for (let i = 0; i < des.length; i++) {
+                    des[i].style.display = "none";
+                }
+                let cakes = document.getElementsByName("cakes");
+                for (let i = 0; i < cakes.length; i++) {
+                    cakes[i].style.display = "none";
+                }
+            } else if (value == "cakes") {
+                let cakes = document.getElementsByName("cakes");
+                for (let i = 0; i < cakes.length; i++) {
+                    cakes[i].style.display = "block";
+                }
+                let bev = document.getElementsByName("bev");
+                for (let i = 0; i < bev.length; i++) {
+                    bev[i].style.display = "none";
+                }
+                let des = document.getElementsByName("des");
+                for (let i = 0; i < des.length; i++) {
+                    des[i].style.display = "none";
+                }
+                let snacks = document.getElementsByName("snacks");
+                for (let i = 0; i < snacks.length; i++) {
+                    snacks[i].style.display = "none";
+                }
+            }
+            // Change the value of sub-category to the first option
+            type2.value = type2.options[0].value;
+        }
+    </script>
 
     {% include 'footer.html' %}
 </body>

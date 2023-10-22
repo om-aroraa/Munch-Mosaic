@@ -39,19 +39,26 @@
         </nav>
     </div>
     <div class="container-all">
-        <h2 >This is our special menu items Of  Cake</h2>
+        <h2>This is our special menu items Of Cake</h2>
         <div class="card-container">
-            <article id="cakes"  class="card-article">
-                <img src="/static/imgs/macroons-1.jpg" alt="" class="card-img">
+            {% for i in cakes %}
+            {{ i.id}}
+            {{ i.productName }}
+            {{ i.price }}
+            {{ i.description }}
+            <article id="cakes" class="card-article">
+                <img src="{{ i.image }}" alt="" class="card-img">
 
                 <div class="card-data">
-                    <span class="card-discription">Made with Something good</span>
-                    <h2 class="card-title">Macaroons</h2>
+                    <span class="card-discription">{{ i.description }}</span>
+                    <h2 class="card-title">{{ i.productName }}</h2>
                     <button class="card-button">Add to Cart</button>
                 </div>
             </article>
+            {% endfor %}
+
             <article class="card-article">
-                <img src="/static/imgs/mango_pudding.jpg" alt="" class="card-img">
+                <img src="/static/imgs/banner5.jpg" alt="" class="card-img">
 
                 <div class="card-data">
                     <span class="card-discription">Made with Something good</span>

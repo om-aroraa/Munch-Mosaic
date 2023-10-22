@@ -46,6 +46,7 @@ label {
     display: block;
     margin-bottom: 5px;
     color: #000000;
+    cursor: none;
 }
 
 input,
@@ -55,6 +56,7 @@ select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    cursor: none;
 }
 
 .btn {
@@ -64,10 +66,20 @@ select {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    cursor: none;
     transition: background-color 0.3s;
 }
 
 .btn:hover {
+    cursor: none;
     background-color: #ff4330;
 }
 
+
+body {
+    cursor: none !important;
+}
+
+button {
+    cursor: none !important;
+}
