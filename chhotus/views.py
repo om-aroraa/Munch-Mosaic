@@ -1,4 +1,4 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from home.models import *
 
@@ -64,13 +64,19 @@ def adminmenu(request):
         subcategory = data.get('subcategory')
 
         Product.objects.create(productName=productName,
-            price=price, 
-            description=description, 
-            image=image, 
-            category=category, 
-            subcategory=subcategory
-            )
-        
+                               price=price,
+                               description=description,
+                               image=image,
+                               category=category,
+                               subcategory=subcategory
+                               )
+
         return redirect('/adminmenu')
     else:
         return render(request, 'adminmenu.html')
+
+
+def delete_menu(request, id):
+    queryset = Product.objects.get(id = id)
+    queryset.delete()
+    return redirect('/adminmenu')

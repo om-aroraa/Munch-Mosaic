@@ -345,7 +345,7 @@ body {
 
 @media screen and (min-width: 1120px) {
     .container-all {
-        height: 110vh;
+        height: 80vh;
 
     }
 
@@ -355,7 +355,22 @@ body {
 
     .card-img {
         width: 340px;
-        padding-inline: 2.5rem;
-        border-radius: 2.5rem;
+        padding-inline: 2rem;
+        border-radius: 3rem;
     }
+}
+
+
+.delete-button {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.delete-text {
+    display: none;
+    margin-left: 10px;
+}
+
+.delete-button:hover .delete-text {
+    display: inline-block;
 }

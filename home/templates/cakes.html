@@ -44,12 +44,14 @@
         <div class="card-container">
             {% for i in cakes %}
             <article id="cakes" class="card-article">
-                <img src="/{{ i.image }}" alt="" class="card-img">
+                <img src="/static/imgs/{{i.image}}" alt="" class="card-img">
 
                 <div class="card-data">
-                    <span class="card-discription">{{ i.description }}</span>
-                    <h2 class="card-title">{{ i.productName }}</h2>
+                    <span class="card-discription">{{i.description}}</span>
+                    <h2 class="card-title">{{i.productName}}</h2>
                     <button class="card-button">Add to Cart</button>
+
+
                 </div>
             </article>
             {% endfor %}
@@ -70,6 +72,10 @@
                     <span class="card-discription">Made with Something good</span>
                     <h2 class="card-title">Blueberry Hazelnut</h2>
                     <button class="card-button">Add to Cart</button>
+                    <div class="delete-button">
+                        <i class="fa-solid fa-minus"></i>
+                        <span class="delete-text">Delete this item</span>
+                    </div>
                 </div>
             </article>
             <article class="card-article">
@@ -92,7 +98,7 @@
             <article class="card-article">
                 <img src="/static/imgs/chocochips cake.jpg" alt="" class="card-img" id="chocochips">
 
-                <div class="card-data" >
+                <div class="card-data">
                     <span class="card-discription">Made with Something good</span>
                     <h2 class="card-title">Chocochips</h2>
                     <button class="card-button">Add to Cart</button>
@@ -108,9 +114,9 @@
                 </div>
             </article>
             <article class="card-article">
-                <img src="/static/imgs/redvelvet.jpg" alt="" class="card-img" id="redvelvet" >
+                <img src="/static/imgs/redvelvet.jpg" alt="" class="card-img" id="redvelvet">
 
-                <div class="card-data" >
+                <div class="card-data">
                     <span class="card-discription">Made with Something good</span>
                     <h2 class="card-title">Red Velvet</h2>
                     <button class="card-button">Add to Cart</button>

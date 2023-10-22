@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.urls import path
 from .views import *
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path("", home, name='home'),
