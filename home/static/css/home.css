@@ -106,7 +106,7 @@ body {
 
 .cover {
     display: block;
-    background-image: url("/static/imgs/banner5.jpg");
+    background-image: url("/static/imgs/banner7.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -130,10 +130,10 @@ body {
 }
 
 .cover h2 {
-    color: #097554;
-    font-family: Footlight MT Light;
+    color: #b61c1c;
+    font-family: Garamond;
     font-style: italic;
-    text-decoration: underline;
+    text-decoration: underline; 
     font-size: 30px;
     text-align: center;
     margin-top: 0;
@@ -277,7 +277,7 @@ ul {
 .text-box h2 {
     margin: 0 0 10px;
     font-size: 2.5em;
-    font-family: Footlight MT Light;
+    font-family: Garamond;
     font-style: italic;
     text-transform: lowercase;
     font-weight: 500;
