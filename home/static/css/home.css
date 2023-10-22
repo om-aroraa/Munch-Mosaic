@@ -31,6 +31,7 @@ body {
     z-index: 1000;
     pointer-events: none;
 }
+
 /* === dont touch its working === */
 .imbanner {
     margin-top: 0;
@@ -253,6 +254,7 @@ ul {
     position: relative;
     top: 100vh;
 }
+
 /* change color and font here */
 .text-box {
     max-width: 40%;
@@ -323,42 +325,54 @@ ul {
     /* z-index: -1; */
 }
 
-/* <!-- review-card css --> */
+/*  === review card === */
 
-.review-body{
-    min-height: 100vh;
+
+.review-body {
+    max-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #EFEFEF;
+    position: relative;
+    top: 200vh;
+    width: 100%;
+    
 }
-.slide-container{
+
+.slide-container {
     max-width: 1120px;
     width: 100%;
     padding: 40px 0;
 }
-.slide-content{
+
+.slide-content {
     margin: 0 40px;
+    width: 500px;
     overflow: hidden;
     border-radius: 25px;
 }
-.card{
+
+.card {
     border-radius: 25px;
     background-color: #FFF;
 }
+
 .image-content,
-.card-content{
+.card-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px 14px;
 }
-.image-content{
+
+.image-content {
     position: relative;
     row-gap: 5px;
     padding: 25px 0;
 }
-.overlay{
+
+.overlay {
     position: absolute;
     left: 0;
     top: 0;
@@ -367,8 +381,9 @@ ul {
     background-color: #000000;
     border-radius: 25px 25px 0 25px;
 }
+
 .overlay::before,
-.overlay::after{
+.overlay::after {
     content: '';
     position: absolute;
     right: 0;
@@ -377,11 +392,13 @@ ul {
     width: 40px;
     background-color: #168832;
 }
-.overlay::after{
+
+.overlay::after {
     border-radius: 0 25px 0 0;
     background-color: #FFF;
 }
-.card-image{
+
+.card-image {
     position: relative;
     height: 150px;
     width: 150px;
@@ -390,14 +407,16 @@ ul {
     padding: 3px;
 
 }
-.card-image .card-img{
+
+.card-image .card-img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid #7d2a2a;
 }
-.name{
+
+.name {
     font-size: 23px;
     font-weight: 600;
     color: #333;
@@ -405,7 +424,8 @@ ul {
     text-align: center;
     font-family: Footlight MT Light;
 }
-.description{
+
+.description {
     font-size: 16px;
     color: #707070;
     text-align: center;
@@ -414,7 +434,8 @@ ul {
     font-family: Sylfaen;
     font-style: italic;
 }
-.button{
+
+.button {
     border: none;
     font-size: 16px;
     font-family: Garamond;
@@ -426,20 +447,22 @@ ul {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.button:hover{
+
+.button:hover {
     background: #4e5057;
 }
-.swiper-pagination-bullet{
+
+.swiper-pagination-bullet {
     background-color: rgb(133, 36, 36);
     opacity: 1;
 }
-.swiper-pagination-bullet-active{
+
+.swiper-pagination-bullet-active {
     background-color: black;
 }
 
 @media screen and (max-width: 768px) {
-    .slide-content{
+    .slide-content {
         margin: 0 10px;
     }
 }
-
