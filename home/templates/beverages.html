@@ -19,7 +19,7 @@
             </div>
             <div class="nav-center">
                 <div class="dropdown">
-                    <a href="#">Hot Coffee</a>
+                    <a href="#hot-coffee">Hot Coffee</a>
                     <div class="dropdown-content">
                         <a href="#">Cappuccino</a>
                         <a href="#">Café Latte</a>
@@ -27,14 +27,14 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="#">Cold Coffee</a>
+                    <a href="#cold-coffee">Cold Coffee</a>
                     <div class="dropdown-content">
                         <a href="#">Cold Mocha</a>
                         <a href="#">Crunchy Frappé</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="#">Mocktails</a>
+                    <a href="#moctails">Mocktails</a>
                     <div class="dropdown-content">
                         <a href="#">Blue Lagoon Mocktail</a>
                         <a href="#">Watermelon Mojito</a>
@@ -47,10 +47,8 @@
         </nav>
     </div>
 
-
-
     <div class="container-all">
-        <h2>Hot Coffee</h2>
+        <h2 id="hot-coffee">Hot Coffee</h2>
         <div class="card-container">
             <article class="card-article">
                 <img src="/static/imgs/capuccinio.jpg" alt="" class="card-img">
@@ -79,52 +77,60 @@
                     <button class="card-button">Add to Cart</button>
                 </div>
             </article>
-            <h2>Cold Coffee</h2>
-            <article class="card-article">
-                <img src="/static/imgs/cold mocha.jpg" alt="" class="card-img">
-
-                <div class="card-data">
-                    <span class="card-description">Made with Something good</span>
-                    <h2 class="card-title">Cold Mocha</h2>
-                    <button class="card-button">Add to Cart</button>
-                </div>
-            </article>
-            <article class="card-article">
-                <img src="/static/imgs/crunchy frappe.jpg" alt="" class="card-img">
-
-                <div class="card-data">
-                    <span class="card-description">Made with Something good</span>
-                    <h2 class="card-title">Crunchy Frappé</h2>
-                    <button class="card-button">Add to Cart</button>
-                </div>
-            </article>
-            <h2>Hot Coffee</h2>
-            <article class="card-article">
-                <img src="/static/imgs/blue lagoon.jpg" alt="" class="card-img">
-
-                <div class="card-data">
-                    <span class="card-description">Made with Something good</span>
-                    <h2 class="card-title">Blue Lagoon Mocktail</h2>
-                    <button class="card-button">Add to Cart</button>
-                </div>
-            </article>
-        <article class="card-article">
-            <img src="/static/imgs/watermelon mojito.jpeg" alt="" class="card-img">
-
-            <div class="card-data">
-                <span class="card-description">Made with Something good</span>
-                <h2 class="card-title">Watermelon Mojito</h2>
-                <button class="card-button">Add to Cart</button>
-            </div>
-        </article>
-
         </div>
-    </div>
+
+        <div class="container-all">
+            <h2 id="cold-coffee">Cold Coffee</h2>
+            <div class="card-container">
+                <article class="card-article">
+                    <img src="/static/imgs/cold mocha.jpg" alt="" class="card-img">
+
+                    <div class="card-data">
+                        <span class="card-description">Made with Something good</span>
+                        <h2 class="card-title">Cold Mocha</h2>
+                        <button class="card-button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="card-article">
+                    <img src="/static/imgs/crunchy frappe.jpg" alt="" class="card-img">
+
+                    <div class="card-data">
+                        <span class="card-description">Made with Something good</span>
+                        <h2 class="card-title">Crunchy Frappé</h2>
+                        <button class="card-button">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="container-all">
+            <h2 id="moctails">Mocktails</h2>
+            <div class="card-container">
+
+                <article class="card-article">
+                    <img src="/static/imgs/blue lagoon.jpg" alt="" class="card-img">
+
+                    <div class="card-data">
+                        <span class="card-description">Made with Something good</span>
+                        <h2 class="card-title">Blue Lagoon Mocktail</h2>
+                        <button class="card-button">Add to Cart</button>
+                    </div>
+                </article>
+                <article class="card-article">
+                    <img src="/static/imgs/watermelon mojito.jpeg" alt="" class="card-img">
+
+                    <div class="card-data">
+                        <span class="card-description">Made with Something good</span>
+                        <h2 class="card-title">Watermelon Mojito</h2>
+                        <button class="card-button">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+        </div>
 
 
-    <script src="/static/main.js"></script>
+        <script src="/static/main.js"></script>
 
-    {% include "footer.html" %}
+        {% include "footer.html" %}
 </body>
 
 </html>

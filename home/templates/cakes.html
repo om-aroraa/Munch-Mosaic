@@ -28,8 +28,9 @@
                 <div class="dropdown">
                     <a href="#pastries">Pastries</a>
                     <div class="dropdown-content">
-                        <a href="#">Death by chocolate pastry</a>
-                        <a href="#vanilla_scoop_waffle">More items coming soon</a>
+                        <a href="#chocopastry">Death by chocolate pastry</a>
+                        <a href="#chocochips">Coffee</a>
+                        <a href="#redvelvet">Red Velvet</a>
                     </div>
                 </div>
             </div>
@@ -39,15 +40,11 @@
         </nav>
     </div>
     <div class="container-all">
-        <h2>Cakes</h2>
+        <h2 id="cakes">Cakes</h2>
         <div class="card-container">
             {% for i in cakes %}
-            {{ i.id}}
-            {{ i.productName }}
-            {{ i.price }}
-            {{ i.description }}
             <article id="cakes" class="card-article">
-                <img src="{{ i.image }}" alt="" class="card-img">
+                <img src="/{{ i.image }}" alt="" class="card-img">
 
                 <div class="card-data">
                     <span class="card-discription">{{ i.description }}</span>
@@ -93,16 +90,16 @@
         <div class="card-container">
 
             <article class="card-article">
-                <img src="/static/imgs/chocochips cake.jpg" alt="" class="card-img">
+                <img src="/static/imgs/chocochips cake.jpg" alt="" class="card-img" id="chocochips">
 
-                <div class="card-data">
+                <div class="card-data" >
                     <span class="card-discription">Made with Something good</span>
                     <h2 class="card-title">Chocochips</h2>
                     <button class="card-button">Add to Cart</button>
                 </div>
             </article>
             <article class="card-article">
-                <img src="/static/imgs/coffee pastry.jpg" alt="" class="card-img">
+                <img src="/static/imgs/coffee pastry.jpg" alt="" class="card-img" id="chocopastry">
 
                 <div class="card-data">
                     <span class="card-discription">Made with Something good</span>
@@ -111,9 +108,9 @@
                 </div>
             </article>
             <article class="card-article">
-                <img src="/static/imgs/redvelvet.jpg" alt="" class="card-img">
+                <img src="/static/imgs/redvelvet.jpg" alt="" class="card-img" id="redvelvet" >
 
-                <div class="card-data">
+                <div class="card-data" >
                     <span class="card-discription">Made with Something good</span>
                     <h2 class="card-title">Red Velvet</h2>
                     <button class="card-button">Add to Cart</button>
