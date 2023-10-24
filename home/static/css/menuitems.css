@@ -5,7 +5,7 @@ html {
     transition: all 1s ease-in;
 }
 
-h2{
+h2 {
     font-family: Footlight MT Light;
     font-size: 2.1rem;
     color: #ffffff;
@@ -34,14 +34,14 @@ h2{
     height: 25vh;
 }
 
-#beverages-bgimg{
+#beverages-bgimg {
     background-image: url(/static/imgs/banner2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 25vh;
 }
- 
+
 #snacks-bgimg {
     background-image: url(/static/imgs/snacks2.jpg);
     background-repeat: no-repeat;
@@ -120,7 +120,7 @@ h2{
     /* Pushes "COFFEES" to the center */
 }
 
-.nav-center a{
+.nav-center a {
     color: #ffffff;
     font-size: 1.2rem;
     margin-left: 2rem;
@@ -215,32 +215,28 @@ body {
 }
 
 .card-description {
-    display: block;
+    display: flex;
+    justify-content: center;
+    /* display: block; */
     font-size: var(--small--font-size);
-    margin-bottom: .25rem;
+    margin-bottom: .5rem;
     font-family: Garamond;
     font-style: italic;
+    /* position: relative; */
+
 }
 
 .card-title {
     font-size: var(--h2--font-size);
     font-weight: 500;
     color: var(--title-color);
-    margin-bottom: .75rem;
+    /* margin-bottom: .75rem; */
     font-family: Sylfaen;
+    position: relative;
+    top: 0;
 }
 
-.card-button {
-    font-size: var(--small--font-size);
-    font-weight: 500;
-    color: var(--first-color);
-    background-color: rgb(247, 81, 109);
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-}
+
 
 
 /* === on hover css of grid main menu === */
@@ -363,22 +359,30 @@ body {
 }
 
 
+.card-button {
+    font-size: small;
+    font-weight: 500;
+    color: var(--first-color);
+    background-color: rgb(247, 81, 109);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    cursor: none;
+}
+
+
 .delete-button {
-    display: inline-block;
-    cursor: pointer;
-}
-
-.delete-text {
-    display: none;
-    margin-left: 10px;
-}
-
-.delete-button:hover .delete-text {
-    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 0;
+    cursor: none;
 }
 
 
-.back-to-top1{
+.back-to-top1 {
     position: absolute;
     top: 105vh;
     right: 20px;
@@ -428,4 +432,3 @@ body {
     transition: .4s;
     z-index: 1000;
 }
-

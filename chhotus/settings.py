@@ -128,6 +128,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/imgs')
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+    BASE_DIR / "home/static",
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

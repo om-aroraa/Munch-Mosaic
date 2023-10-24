@@ -18,7 +18,13 @@ def home(request):
 
 
 def beverages(request):
-    return render(request, 'beverages.html')
+    cold_coffee = Product.objects.filter(subcategory="cold_coffee")
+    cold_coffee = list(cold_coffee)
+    hot_coffee = Product.objects.filter(subcategory="hot_coffee")
+    hot_coffee = list(hot_coffee)
+    mocktails = Product.objects.filter(subcategory="mocktails")
+    mocktails = list(mocktails)
+    return render(request, 'beverages.html', {'cold_coffee': cold_coffee, 'hot_coffee': hot_coffee, 'mocktails': mocktails})
 
 
 def snacks(request):
@@ -26,15 +32,21 @@ def snacks(request):
 
 
 def desserts(request):
-    return render(request, 'desserts.html')
+    pudding = Product.objects.filter(subcategory="choco_pudding")
+    pudding = list(pudding)
+    macaroons = Product.objects.filter(subcategory="macaroons")
+    macaroons = list(macaroons)
+    waffles = Product.objects.filter(subcategory="waffles")
+    waffles = list(waffles)
+    return render(request, 'desserts.html', {'pudding': pudding, 'macaroons': macaroons, 'waffles': waffles})
 
 
 def cakes(request):
-    cakes = Product.objects.filter(category="cakes")
+    cakes = Product.objects.filter(subcategory="cakes")
     cakes = list(cakes)
-    pastries = Product.objects.filter(category="pastries")
+    pastries = Product.objects.filter(subcategory="pastries")
     pastries = list(pastries)
-    return render(request, 'cakes.html', {'cakes': cakes})
+    return render(request, 'cakes.html', {'cakes': cakes, 'pastries': pastries})
 
 
 def cart(request):
@@ -134,7 +146,13 @@ def adminmenu(request):
         return render(request, 'adminmenu.html')
 
 
-def delete_menu(request, id):
-    queryset = Product.objects.get(id=id)
-    queryset.delete()
-    return redirect('/adminmenu')
+def delete_menu(request, id, path):
+    user = request.session.get('user')
+    if user and user == 'admin':
+        Product.objects.filter(id=id).delete()
+        return redirect(path)
+    else:
+        return HttpResponse(status=404)
+
+def serve_image(request, filename):
+    return redirect('/static/imgs/' + filename)

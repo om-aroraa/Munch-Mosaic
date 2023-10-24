@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import *
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -34,4 +33,6 @@ urlpatterns = [
     path("cursor/", cursor, name="cursor"),
     path("adminmenu/", adminmenu, name="adminmenu"),
     path('logout/', logout, name="logout"),
+    path('home/static/imgs/<str:filename>', serve_image, name="serve_image"),
+    path('delete/<int:id>/<str:path>/', delete_menu, name='delete'),
 ]

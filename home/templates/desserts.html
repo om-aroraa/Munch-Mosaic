@@ -17,9 +17,9 @@
                 <div class="dropdown">
                     <span>Desserts</span>
                     <div class="dropdown-content">
-                        <a href="#">Choco Pudding</a>
-                        <a href="#">Macaroon</a>
-                        <a href="#">Waffle</a>
+                        <a href="#pudding">Pudding</a>
+                        <a href="#macaroons">Macaroon</a>
+                        <a href="#waffles">Waffle</a>
                         <!-- <a href="#">Cherry</a> -->
                     </div>
                 </div>
@@ -37,15 +37,36 @@
                     </div> -->
             </div>
 
-    <div class="nav-right">
-        <a href="/">Home</a>
-    </div>
-    </nav>
+            <div class="nav-right">
+                <a href="/">Home</a>
+            </div>
+        </nav>
     </div>
 
     <div class="container-all">
-        <h2 id="chocopudding">Choco Pudding</h2>
+        <h2 id="pudding">Pudding</h2>
         <div class="card-container">
+
+            {% for i in pudding %}
+            <article id="cakes" class="card-article">
+                <img src="/{{i.image}}" alt="" class="card-img">
+
+                <div class="card-data">
+                    <span class="card-discription">{{i.description}}</span>
+                    <h2 class="card-title">{{i.productName}}</h2>
+                    <span class="card-description">{{i.price}}</span>
+                    <button class="card-button">Add to Cart</button>
+                    {% if request.session.user == 'admin' %}
+                    <div class="delete-button">
+                        <i onclick="deleteItem('{{ i.id }}', '{{ request.path }}')" class="fa-solid fa-minus">
+                            <button class="card-button">Delete this item</button>
+                        </i>
+                    </div>
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+
             <article id="cakes" class="card-article">
                 <img src="/static/imgs/chocopudding.jpg" alt="" class="card-img">
 
@@ -66,7 +87,18 @@
     <div class="container-all">
         <h2 id="macaroons">Macaroons</h2>
         <div class="card-container">
+            {% for i in macaroons %}
+            <article id="cakes" class="card-article">
+                <img src="/{{i.image}}" alt="" class="card-img">
 
+                <div class="card-data">
+                    <span class="card-discription">{{i.description}}</span>
+                    <h2 class="card-title">{{i.productName}}</h2>
+                    <span class="card-description">{{i.price}}</span>
+                    <button class="card-button">Add to Cart</button>
+                </div>
+            </article>
+            {% endfor %}
             <article class="card-article">
                 <img src="/static/imgs/classic macaroons.jpg" alt="" class="card-img">
 
@@ -115,6 +147,18 @@
     <div class="container-all">
         <h2 id="waffles">Waffles</h2>
         <div class="card-container">
+            {% for i in waffles %}
+            <article id="cakes" class="card-article">
+                <img src="/{{i.image}}" alt="" class="card-img">
+
+                <div class="card-data">
+                    <span class="card-discription">{{i.description}}</span>
+                    <h2 class="card-title">{{i.productName}}</h2>
+                    <span class="card-description">{{i.price}}</span>
+                    <button class="card-button">Add to Cart</button>
+                </div>
+            </article>
+            {% endfor %}
             <article class="card-article">
                 <img src="/static/imgs/vanilla waffle.jpg" alt="" class="card-img">
 
