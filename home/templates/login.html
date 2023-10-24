@@ -9,20 +9,28 @@
 </head>
 
 <body>
+    <script src="https://kit.fontawesome.com/1144a62fa6.js" crossorigin="anonymous"></script>
     {% include "cursor.html" %}
     <div class="center">
         <div class="login-container">
             <form class="form" method="post" enctype="multipart/form-data">
+                {% if msg %}
+                <p class="msg">{{ msg }}</p>
+                {% endif %}
                 {% csrf_token %}
                 <p class="title">Munch Mosaic</p>
                 <p class="title-2">Login</p>
-                <input placeholder="Username" class="username input" type="text" name="username">
-                <input placeholder="Password" class="password input" type="password" name="password">
+                <input placeholder="Email" class="username input" type="text" name="email" required>
+                <div class="eye">
+                    <input placeholder="Password" class="password input" type="password" name="password" id="password" required>
+                    <i class="fa-solid fa-eye-slash" onclick="pass()" style="color: #ffffff;" id="fa-eye-slash"></i>
+                </div>
                 <button class="btn" type="submit">Login</button>
                 <p class="title-3">Don't have an account? <a href="/register">Register</a></p>
             </form>
         </div>
     </div>
+    <script src="/static/main.js"></script>
 </body>
 
 </html>

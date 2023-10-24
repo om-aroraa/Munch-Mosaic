@@ -7,14 +7,14 @@ class Product(models.Model):
     productName = models.CharField(max_length=50)
     price = models.IntegerField(default=0)
     description = models.CharField(max_length=300)
-    image = models.ImageField(upload_to="static/imgs", default="")
+    image = models.ImageField(upload_to="home/static/imgs", default="")
     category = models.CharField(max_length=50, default="")
     subcategory = models.CharField(max_length=50, default="")
 
-
-class User(models.Model):
+class User (models.Model):
     user_id = models.AutoField
     name = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
- 
+
 

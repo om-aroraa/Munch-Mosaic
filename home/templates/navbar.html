@@ -22,25 +22,23 @@
             </a>
             <a href="/beverages">
                 <li>Menu</li>
-            </a>
-            <!-- <a href="/snacks">
-                <li>Snacks</li>
-            </a>
+            </a>    
 
-            <a href="/desserts">
-                <li>Desserts</li>
-            </a>
-            <a href="/cakes">
-                <li>Cakes</li>
-            </a> -->
             <a href="/cart">
                 <li>Your Cart</li>
             </a>
+            {% if request.session.user == "admin" %}        
             <a href="/adminmenu">
                 <li>Admin Menu</li>
             </a>
+            {% endif %}
         </ul>
+        {% if request.session.user %}
+        <a href="/logout"><button class="login-button">Logout</button></a>
+        {% else %}
         <a href="/login"><button class="login-button">Login</button></a>
+        {% endif %}
+        <!-- <a href="/login"><button class="login-button">Login</button></a> -->
     </div>
 
 </body>

@@ -28,3 +28,19 @@ const moveCursor = (e) => {
 }
 
 window.addEventListener('mousemove', moveCursor)
+
+var a;
+function pass() {
+    if (a == 1) {
+        document.getElementById("password").type = "password";
+        document.getElementById("fa-eye-slash").classList.add("fa-eye-slash");
+        document.getElementById("fa-eye-slash").classList.remove("fa-eye");
+        a = 0;
+    }
+    else {
+        document.getElementById("password").type = "text";
+        document.getElementById("fa-eye-slash").classList.add("fa-eye");
+        document.getElementById("fa-eye-slash").classList.remove("fa-eye-slash");
+        a = 1;
+    }
+}

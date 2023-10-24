@@ -17,6 +17,11 @@
         {% include "navbar.html" %}
 
         <div class="box">
+            {% if request.session.user %}
+            <h1>Welcome {{ request.session.user }}</h1>
+            {% else %}
+            <h1>Welcome to Munch Mosaic</h1>
+            {% endif %}
             <h1>Indulge in a Symphony of Flavors at Munch Mosaic</h1>
             <h3>Welcome to a Culinary Wonderland!</h3>
 

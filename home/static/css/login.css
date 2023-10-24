@@ -101,3 +101,14 @@ form a{
     margin-top: 1rem;
     transition: all 400ms;
 }
+
+.fa-eye-slash, .fa-eye {
+    position: relative;
+    left: -30px;
+}
+
+.password {
+    display: inline-flex;
+    position: relative;
+    right: -10px;
+}
