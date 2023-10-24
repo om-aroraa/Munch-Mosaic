@@ -25,9 +25,9 @@
             </div>
             <div class="nav-center">
                 <a href="/beverages">Beverages</a>
-                    <a href="/snacks">Snacks</a>
-                    <a href="/desserts">Desserts</a>
-                    <!-- <div class="dropdown-content">
+                <a href="/snacks">Snacks</a>
+                <a href="/desserts">Desserts</a>
+                <!-- <div class="dropdown-content">
                         <a href="#chocopastry">Death by chocolate pastry</a>
                         <a href="#chocochips">Coffee</a>
                         <a href="#redvelvet">Red Velvet</a>
@@ -43,7 +43,7 @@
         <div class="card-container">
             {% for i in cakes %}
             <article id="cakes" class="card-article">
-                <img src="/static/imgs/{{i.image}}" alt="" class="card-img">
+                <img src="static/imgs/{{i.image}}" alt="" class="card-img">
 
                 <div class="card-data">
                     <span class="card-discription">{{i.description}}</span>
@@ -89,14 +89,25 @@
 
         </div>
     </div>
-<a href="#cakes-bgimg" class="back-to-top1">
-    <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
-</a>
+    <a href="#cakes-bgimg" class="back-to-top1">
+        <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
+    </a>
 
     <div class="container-all">
         <h2 id="pastries">Pastries</h2>
         <div class="card-container">
+            {% for p in pastries %}
+            <article class="card-article">
+                <img src="/{{i.images}}" alt="" class="card-img" id="chocochips">
 
+                <div class="card-data">
+                    <span class="card-discription">{{p.description}}</span>
+                    <h2 class="card-title">{{p.productName}}</h2>
+                    <span class="card-discription">{{p.price}}</span>
+                    <button class="card-button">Add to Cart</button>
+                </div>
+            </article>
+            {% endfor %}
             <article class="card-article">
                 <img src="/static/imgs/chocochips cake.jpg" alt="" class="card-img" id="chocochips">
 
@@ -128,9 +139,9 @@
         </div>
     </div>
 
-<a href="#cakes-bgimg" class="back-to-top2">
-    <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
-</a>
+    <a href="#cakes-bgimg" class="back-to-top2">
+        <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
+    </a>
     {% include "footer.html" %}
 
 </body>

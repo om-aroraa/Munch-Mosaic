@@ -30,8 +30,10 @@ def desserts(request):
 
 
 def cakes(request):
-    cakes = Product.objects.filter(subcategory="waffles")
+    cakes = Product.objects.filter(category="cakes")
     cakes = list(cakes)
+    pastries = Product.objects.filter(category="pastries")
+    pastries = list(pastries)
     return render(request, 'cakes.html', {'cakes': cakes})
 
 
