@@ -14,34 +14,33 @@
     <div class="navbody" id="deserts-bgimg">
         <nav class="navbar-2">
             <div class="nav-left">
-                <span>Desserts</span>
-            </div>
-            <div class="nav-center">
-                <a href="#chocopudding">Choco Pudding</a>
                 <div class="dropdown">
-                    <a href="#macaroons">Macaroons</a>
+                    <span>Desserts</span>
                     <div class="dropdown-content">
-                        <a href="#">Classic</a>
-                        <a href="#">Mint</a>
-                        <a href="#">Chocolate</a>
-                        <a href="#">Cherry</a>
+                        <a href="#">Choco Pudding</a>
+                        <a href="#">Macaroon</a>
+                        <a href="#">Waffle</a>
+                        <!-- <a href="#">Cherry</a> -->
                     </div>
                 </div>
-                <div class="dropdown">
-                    <a href="#waffles">Waffles</a>
-                    <div class="dropdown-content">
+            </div>
+            <div class="nav-center">
+                <a href="/beverages">Beverages</a>
+
+                <a href="/cakes">Cakes</a>
+                <a href="/snacks">Snacks</a>
+                <!-- <div class="dropdown-content">
                         <a href="#">Vanila Scoop Waffle</a>
                         <a href="#">Choco Scoop Waffle </a>
                         <a href="#">Caramel Scoop Waffle</a>
                         <a href="#">Strawberry Scoop Waffle</a>
-                    </div>
-                </div>
+                    </div> -->
+            </div>
 
-            </div>
-            <div class="nav-right">
-                <a href="/">Home</a>
-            </div>
-        </nav>
+    <div class="nav-right">
+        <a href="/">Home</a>
+    </div>
+    </nav>
     </div>
 
     <div class="container-all">
@@ -59,8 +58,13 @@
 
         </div>
     </div>
+
+    <a href="#cakes-bgimg" class="back-to-top1">
+        <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
+    </a>
+
     <div class="container-all">
-        <h2 id="macaroons">This is our special menu items of Macaroons</h2>
+        <h2 id="macaroons">Macaroons</h2>
         <div class="card-container">
 
             <article class="card-article">
@@ -102,9 +106,14 @@
         </div>
     </div>
 
-    
+
+    <a href="#cakes-bgimg" class="back-to-top2">
+        <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
+    </a>
+
+
     <div class="container-all">
-        <h2 id="waffles">This is our special menu items of Waffles</h2>
+        <h2 id="waffles">Waffles</h2>
         <div class="card-container">
             <article class="card-article">
                 <img src="/static/imgs/vanilla waffle.jpg" alt="" class="card-img">
@@ -144,6 +153,10 @@
             </article>
         </div>
     </div>
+
+    <a href="#cakes-bgimg" class="back-to-top3">
+        <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
+    </a>
 
     {% include "footer.html" %}
 

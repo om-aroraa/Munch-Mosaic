@@ -165,8 +165,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #1F1B18;
-    color: #843946;
+    color: #ff5d78;
     cursor: none;
+    font-family: 'Garamond', serif;
+    font-size: 1.1rem;
 }
 
 
@@ -232,7 +234,7 @@ body {
     font-size: var(--small--font-size);
     font-weight: 500;
     color: var(--first-color);
-    background-color: rgb(111, 39, 51);
+    background-color: rgb(247, 81, 109);
     color: rgb(0, 0, 0);
     border: none;
     padding: 8px 16px;
@@ -244,7 +246,7 @@ body {
 /* === on hover css of grid main menu === */
 
 .card-button:hover {
-    background-color: #731846;
+    background-color: rgb(203, 44, 94);
     /* A slightly different shade of pink on hover */
 }
 
@@ -345,7 +347,7 @@ body {
 
 @media screen and (min-width: 1120px) {
     .container-all {
-        height: 80vh;
+        height: auto;
 
     }
 
@@ -374,3 +376,56 @@ body {
 .delete-button:hover .delete-text {
     display: inline-block;
 }
+
+
+.back-to-top1{
+    position: absolute;
+    top: 105vh;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #ff5d78;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .4s;
+    z-index: 1000;
+}
+
+.back-to-top2 {
+    position: absolute;
+    top: 195vh;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #ff5d78;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .4s;
+    z-index: 1000;
+}
+
+.back-to-top3 {
+    position: absolute;
+    top: 405vh;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #ff5d78;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .4s;
+    z-index: 1000;
+}
+

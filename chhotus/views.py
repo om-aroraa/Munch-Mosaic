@@ -32,13 +32,27 @@ def cakes(request):
 def cart(request):
     return render(request, 'cart.html')
 
+def register(request):
+    if request.method == "POST":
+        data = request.POST
+        name = data.get('name')
+        email = data.get('email')
+        password = data.get('password')
+        phone = data.get('phone')
+        address = data.get('address')
+
+        User.objects.create(name=name,
+                            email=email,
+                            password=password,
+                            phone=phone,
+                            address=address
+                            )
+
+        return redirect('/register')
+    return render(request, 'register.html')
 
 def login(request):
     return render(request, 'login.html')
-
-
-def register(request):
-    return render(request, 'register.html')
 
 
 def checkout(request):
@@ -77,6 +91,6 @@ def adminmenu(request):
 
 
 def delete_menu(request, id):
-    queryset = Product.objects.get(id = id)
+    queryset = Product.objects.get(id=id)
     queryset.delete()
     return redirect('/adminmenu')

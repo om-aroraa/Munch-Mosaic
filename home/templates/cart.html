@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/cart.css">
+    <title>Apple Online Store</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    {% include 'cursor.html' %}
+
+    <h1>Savor the Flavor - Checkout Now!!</h1>
+    <div class="content">
+        <div class="main-card">
+            {% if cart_items %}
+            {% for i in cart_items %}
+            <div class="product-card">
+                <img class="product-images" src="/{{ i.image }}" alt="Product Image">
+                <div class="product-details">
+                    <p class="model-name">{{ i.name }}</p>
+                    <p class="price">For &#8377 {{ i.price }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="empty-cart">
+                <p>No items in cart</p>
+            </div>
+            {% endif %}
+        </div>
+        <div class="checkout-form">
+            <form method="POST">
+                {% csrf_token %}
+                <label>Checkout</label>
+                <textarea name="address" placeholder="Address" required></textarea>
+                <input type="number" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+                <button {% if cart_items %}{% else %} style="color: #ff0000 !important;" disabled{% endif %}>Place
+                    Order</button>
+                <button>Go Back Home</button>
+            </form>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

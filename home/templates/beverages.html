@@ -15,30 +15,33 @@
     <div class="navbody" id="beverages-bgimg">
         <nav class="navbar-2">
             <div class="nav-left">
+                <div class="dropdown">
                 <span>Beverages</span>
+                 <div class="dropdown-content">
+                        <a href="#hot-coffee">Hot Coffee</a>
+                        <a href="#cold-coffee">Cold Coffee</a>
+                        <a href="#moctails">Mocktails</a>
+                    </div>
+                    </div>
             </div>
             <div class="nav-center">
                 <div class="dropdown">
-                    <a href="#hot-coffee">Hot Coffee</a>
-                    <div class="dropdown-content">
-                        <a href="#">Cappuccino</a>
-                        <a href="#">Café Latte</a>
-                        <a href="#">Espresso</a>
-                    </div>
+                    <a href="/desserts">Desserts</a>
+                   
                 </div>
                 <div class="dropdown">
-                    <a href="#cold-coffee">Cold Coffee</a>
-                    <div class="dropdown-content">
+                    <a href="/snacks">Snacks</a>
+                    <!-- <div class="dropdown-content">
                         <a href="#">Cold Mocha</a>
                         <a href="#">Crunchy Frappé</a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="dropdown">
-                    <a href="#moctails">Mocktails</a>
-                    <div class="dropdown-content">
+                    <a href="/cakes">Cakes</a>
+                    <!-- <div class="dropdown-content">
                         <a href="#">Blue Lagoon Mocktail</a>
                         <a href="#">Watermelon Mojito</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="nav-right">
@@ -126,7 +129,7 @@
                 </article>
             </div>
         </div>
-
+<a href="#beverages-bgimg" class="back-to-top"><i class="fa-solid fa-angle-up" style="color: #ffffff;"></i></a>
 
         <script src="/static/main.js"></script>
         {% include "footer.html" %}
