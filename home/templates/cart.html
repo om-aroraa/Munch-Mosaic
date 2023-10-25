@@ -4,47 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/cart.css">
-    <title>Apple Online Store</title>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/static/css/cart.css"> <!-- Link to your CSS file -->
 </head>
 
 <body>
-    {% include 'navbar.html' %}
-    {% include 'cursor.html' %}
+    {% include "navbar.html" %}
+    {% include "cursor.html" %}
+    <h1>Checkout</h1>
+    
+    {% if data %}
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Remove?</th>
+        </tr>
 
-    <h1>Savor the Flavor - Checkout Now!!</h1>
-    <div class="content">
-        <div class="main-card">
-            {% if cart_items %}
-            {% for i in cart_items %}
-            <div class="product-card">
-                <img class="product-images" src="/{{ i.image }}" alt="Product Image">
-                <div class="product-details">
-                    <p class="model-name">{{ i.name }}</p>
-                    <p class="price">For &#8377 {{ i.price }}</p>
-                </div>
-            </div>
-            {% endfor %}
-            {% else %}
-            <div class="empty-cart">
-                <p>No items in cart</p>
-            </div>
-            {% endif %}
-        </div>
-        <div class="checkout-form">
-            <form method="POST">
-                {% csrf_token %}
-                <label>Checkout</label>
-                <textarea name="address" placeholder="Address" required></textarea>
-                <input type="number" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
-                <button {% if cart_items %}{% else %} style="color: #ff0000 !important;" disabled{% endif %}>Place
-                    Order</button>
-                <button>Go Back Home</button>
-            </form>
-        </div>
-    </div>
+        {% for item in data %}  
 
-    {% include 'footer.html' %}
+        <tr>
+            <td>{{ item.productName }}</td>
+            <td>{{ item.quantity }}</td>
+            <td><img src="/{{ item.image }}"></img></td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.price }}</td>
+            <td><button onclick="deleteItem('{{ item.id }}')">Yes!</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Total: {{ total }}</h2>
+    <form action="/checkout" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="address" placeholder="Address" required>
+        <input type="text" name="phone" placeholder="Phone" required>
+        <input type="submit" value="Place Order">
+    </form>
+    {% else %}
+    <h2>No items</h2>
+    {% endif %}
+
+    <script>
+        function deleteItem(id) {
+            window.location.href = "/del?id=" + id + "&path={{ request.path }}";
+        }
+    </script>
+
+    {% include "footer.html" %}
 </body>
 
 </html>

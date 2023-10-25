@@ -28,11 +28,13 @@ def beverages(request):
 
 
 def snacks(request):
-    return render(request, 'snacks.html')
+    snacks = Product.objects.filter(category="snacks")
+    snacks = list(snacks)
+    return render(request, 'snacks.html', {'snacks': snacks})
 
 
 def desserts(request):
-    pudding = Product.objects.filter(subcategory="choco_pudding")
+    pudding = Product.objects.filter(subcategory="pudding")
     pudding = list(pudding)
     macaroons = Product.objects.filter(subcategory="macaroons")
     macaroons = list(macaroons)
@@ -50,7 +52,34 @@ def cakes(request):
 
 
 def cart(request):
-    return render(request, 'cart.html')
+    if request.method == "POST":
+        user = request.session.get('user')
+        if user is None:
+            redirect('/login')
+        data = request.POST
+        print(data)
+        id = int(data.get('cart_id'))
+        obj = Product.objects.get(id=id)
+        try:
+            cartObj = Cart.objects.get(productName=obj.productName, user=user)
+            cartObj.quantity += 1
+            cartObj.save()
+        except:
+            cartObj = Cart.objects.create(productName=obj.productName,price=obj.price,description=obj.description,image=obj.image,category=obj.category,subcategory=obj.subcategory,quantity=1,user=user)
+            cartObj.save()
+        return redirect(request.META.get('HTTP_REFERER'))
+    user = request.session.get('user')
+    if user is None:
+        return redirect('/login')
+    all = list(Cart.objects.filter(user=user).all())
+    total = None
+    if len(all) < 1:
+        all = None
+    else:
+        total = 0
+        for i in all:
+            total = total + (i.price * i.quantity)
+    return render(request, 'cart.html', {"data": all, 'total': total})
 
 
 def register(request):
@@ -63,7 +92,7 @@ def register(request):
         obj = User.objects.filter(email=email)
         if obj.exists():
             return render(request, 'register.html', {'msg': "Email already exists"})
-        
+
         obj = User.objects.create(name=name, email=email, password=password)
         obj.save()
         request.session['user'] = name
@@ -109,10 +138,10 @@ def login(request):
     # If the request method is not POST, render the login page
     return render(request, 'login.html')
 
+
 def logout(request):
     del request.session['user']
     return redirect('/')
-
 
 
 def footer(request):
@@ -145,14 +174,34 @@ def adminmenu(request):
     else:
         return render(request, 'adminmenu.html')
 
-
-def delete_menu(request, id, path):
+def delete_item(request):
     user = request.session.get('user')
-    if user and user == 'admin':
-        Product.objects.filter(id=id).delete()
-        return redirect(path)
+    id = request.GET.get('id')
+    path = request.GET.get('path')
+    print(user, id, path)
+    if user is not None and id is not None and path is not None:
+        if path == "/cart/":
+            obj = Cart.objects.get(id=id)
+            print(obj)
+            if obj.quantity <= 1:
+                obj.delete()
+            else:
+                obj.quantity -= 1
+                obj.save()
+            return redirect(path)
+        elif user == 'admin':
+            try:
+                prodObj = Product.objects.get(id=id)
+                Cart.objects.filter(productName=prodObj.productName).delete()
+                prodObj.delete()
+                return redirect(path)
+            except:
+                return redirect(path)
+        else:
+            return HttpResponse(status=403)
     else:
         return HttpResponse(status=404)
+
 
 def serve_image(request, filename):
     return redirect('/static/imgs/' + filename)

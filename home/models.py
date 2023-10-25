@@ -17,3 +17,13 @@ class User (models.Model):
     email = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
 
+class Cart (models.Model):
+    cart_id = models.AutoField
+    productName = models.CharField(max_length=50)
+    price = models.IntegerField(default=0)
+    description = models.CharField(max_length=300)
+    image = models.ImageField(upload_to="home/static/imgs", default="")
+    category = models.CharField(max_length=50, default="")
+    subcategory = models.CharField(max_length=50, default="")
+    quantity = models.IntegerField()
+    user = models.CharField(max_length=100)

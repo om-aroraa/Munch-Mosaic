@@ -49,7 +49,11 @@
                     <h2 class="card-title">{{i.productName}}</h2>
                     <span class="card-description ">₹{{i.price}}</span>
                     <div class="delete-button">
-                        <button class="card-button">Add to Cart</button>
+                        <form method="POST" action="/cart/">
+                            {% csrf_token %}
+                            <input type="hidden" name="cart_id" value="{{ i.id }}">
+                            <button class="card-button" type="submit" name="cart">Add to Cart</button>
+                        </form>
                         {% if request.session.user == 'admin' %}
                         <button class="card-button" onclick="deleteItem('{{ i.id }}', '{{ request.path }}')"> 
                             Delete this item 
@@ -76,9 +80,13 @@
                     <h2 class="card-title">{{p.productName}}</h2>
                     <span class="card-description">₹{{p.price}}</span>
                     <div class="delete-button">
-                        <button class="card-button">Add to Cart</button>
+                        <form method="POST" action="/cart/">
+                            {% csrf_token %}
+                            <input type="hidden" name="cart_id" value="{{ p.id }}">
+                            <button class="card-button" type="submit" name="cart">Add to Cart</button>
+                        </form>
                         {% if request.session.user == 'admin' %}
-                        <button class="card-button" onclick="deleteItem('{{ i.id }}', '{{ request.path }}')">
+                        <button class="card-button" onclick="deleteItem('{{ p.id }}', '{{ request.path }}')">
                             Delete this item
                         </button>
                         {% endif %}
@@ -98,7 +106,7 @@
         function deleteItem(id, path) {
             var r = confirm("Are you sure you want to delete this item?");
             if (r == true) {
-                window.location.href = "/delete/" + id + path;
+                window.location.href = "/del?id=" + id + "&path=" + path;
             }
         }
     </script>

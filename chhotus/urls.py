@@ -33,6 +33,6 @@ urlpatterns = [
     path("cursor/", cursor, name="cursor"),
     path("adminmenu/", adminmenu, name="adminmenu"),
     path('logout/', logout, name="logout"),
+    path('del', delete_item, name='delete'),
     path('home/static/imgs/<str:filename>', serve_image, name="serve_image"),
-    path('delete/<int:id>/<str:path>/', delete_menu, name='delete'),
 ]
