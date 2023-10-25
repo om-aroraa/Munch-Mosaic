@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/static/css/cart.css">
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    {% include "cursor.html" %}
+    <div class="check-center">
+    <form class="cart-form" onsubmit="submit()">
+        <h2 class="checkout">Flavorful Farewell: Finalize Your Order!</h2>
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="address" placeholder="Address" required class="address-cart">
+        <input type="text" name="phone" placeholder="Phone" required>
+        <input type="submit" onsubmit="submit()" value="Place Order">
+    </form>
+    </div>
+    {% include "footer.html" %}
+    <script>
+        let form = document.querySelector(".cart-form");
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            submit();
+        }
+        function submit() {
+            alert("Your order has been placed!");
+            fetch("/checkout?confirmed=yesss", {
+                method: "GET"
+            })
+            window.location.href = "/";
+        }
+    </script>
+</body>
+
+</html>

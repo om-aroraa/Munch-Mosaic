@@ -52,29 +52,31 @@
 
     <div class="container-all">
         <h2 id="hot-coffee">Hot Coffee</h2>
-        {% for i in hot_coffee %}
-        <article class="card-article">
-            <img src="/{{i.image}}" alt="" class="card-img">
-            <div class="card-data">
-                <span class="card-description">{{i.description}}</span>
-                <h2 class="card-title">{{i.productName}}</h2>
-                <span class="card-description ">₹{{i.price}}</span>
-                <div class="delete-button">
-                    <form method="POST" action="/cart/">
-                        {% csrf_token %}
-                        <input type="hidden" name="cart_id" value="{{ i.id }}">
-                        <button class="card-button" type="submit" name="cart">Add to Cart</button>
-                    </form> 
-                    <!-- only admins -->
-                    {% if request.session.user == 'admin' %}
-                    <button class="card-button" onclick="deleteItem('{{ i.id }}', '{{ request.path }}')">
-                        Delete this item
-                    </button>
-                    {% endif %}
-                </div>  
-            </div>
-        </article>
-        {% endfor %}
+        <div class="card-container">
+            {% for i in hot_coffee %}
+            <article class="card-article">
+                <img src="/{{i.image}}" alt="" class="card-img">
+                <div class="card-data">
+                    <span class="card-description">{{i.description}}</span>
+                    <h2 class="card-title">{{i.productName}}</h2>
+                    <span class="card-description ">₹{{i.price}}</span>
+                    <div class="delete-button">
+                        <form method="POST" action="/cart/">
+                            {% csrf_token %}
+                            <input type="hidden" name="cart_id" value="{{ i.id }}">
+                            <button class="card-button" type="submit" name="cart">Add to Cart</button>
+                        </form>
+                        <!-- only admins -->
+                        {% if request.session.user == 'admin' %}
+                        <button class="card-button" onclick="deleteItem('{{ i.id }}', '{{ request.path }}')">
+                            Delete this item
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
     </div>
     <div class="container-all">
         <h2 id="cold-coffee">Cold Coffee</h2>
@@ -128,7 +130,6 @@
             {% endfor %}
         </div>
     </div>
-    <a href="#beverages-bgimg" class="back-to-top"><i class="fa-solid fa-angle-up" style="color: #ffffff;"></i></a>
 
     <script src="/static/main.js"></script>
     <script>

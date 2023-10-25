@@ -59,7 +59,7 @@
                             {% csrf_token %}
                             <input type="hidden" name="cart_id" value="{{ i.id }}">
                             <button class="card-button" type="submit" name="cart">Add to Cart</button>
-                        </form>                        {% if request.session.user == 'admin' %}
+                        </form> {% if request.session.user == 'admin' %}
                         <button class="card-button" onclick="deleteItem('{{ i.id }}', '{{ request.path }}')">
                             Delete this item
                         </button>
@@ -70,10 +70,6 @@
             {% endfor %}
         </div>
     </div>
-
-    <a href="#cakes-bgimg" class="back-to-top1">
-        <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
-    </a>
 
     <div class="container-all">
         <h2 id="macaroons">Macaroons</h2>
@@ -90,7 +86,7 @@
                             {% csrf_token %}
                             <input type="hidden" name="cart_id" value="{{ i.id }}">
                             <button class="card-button" type="submit" name="cart">Add to Cart</button>
-                        </form>                        {% if request.session.user == 'admin' %}
+                        </form> {% if request.session.user == 'admin' %}
                         <button class="card-button" onclick="deleteItem('{{ i.id }}', '{{ request.path }}')">
                             Delete this item
                         </button>
@@ -101,11 +97,6 @@
             {% endfor %}
         </div>
     </div>
-
-
-    <a href="#cakes-bgimg" class="back-to-top2">
-        <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
-    </a>
 
     <div class="container-all">
         <h2 id="waffles">Waffles</h2>
@@ -122,7 +113,7 @@
                             {% csrf_token %}
                             <input type="hidden" name="cart_id" value="{{ i.id }}">
                             <button class="card-button" type="submit" name="cart">Add to Cart</button>
-                        </form> 
+                        </form>
                         <!-- only admin can see -->
                         {% if request.session.user == 'admin' %}
                         <button class="card-button" onclick="deleteItem('{{ i.id }}', '{{ request.path }}')">
@@ -135,10 +126,6 @@
             {% endfor %}
         </div>
     </div>
-
-    <a href="#cakes-bgimg" class="back-to-top3">
-        <i class="fa-solid fa-angle-up" style="color: #ffffff;"></i>
-    </a>
 
     <script>
         function deleteItem(id, path) {

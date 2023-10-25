@@ -13,6 +13,7 @@ const cursorRounded = document.querySelector('.rounded');
 const cursorPointed = document.querySelector('.pointed');
 
 
+let initial = true
 const moveCursor = (e) => {
     const mouseY = e.clientY;
     const mouseX = e.clientX;
@@ -20,11 +21,23 @@ const moveCursor = (e) => {
     cursorPointed.style.left = `${mouseX}px`;
     cursorPointed.style.top = `${mouseY}px`;
 
+    cursorPointed.style.display = 'block';
+    cursorRounded.style.display = 'block';
 
-    cursorRounded.animate({
-        left: `${mouseX}px`,
-        top: `${mouseY}px`
-    }, {duration: 400, fill: 'forwards'})
+
+    if (initial) {
+        cursorRounded.animate({
+            left: `${mouseX}px`,
+            top: `${mouseY}px`,
+            opacity: 1
+        }, { duration: 0, fill: 'forwards' })
+        initial = false
+    } else {
+        cursorRounded.animate({
+            left: `${mouseX}px`,
+            top: `${mouseY}px`
+        }, { duration: 400, fill: 'forwards' })
+    }
 }
 
 window.addEventListener('mousemove', moveCursor)

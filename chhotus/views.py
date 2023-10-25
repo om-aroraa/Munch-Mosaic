@@ -10,6 +10,18 @@ def navbar(request):
 
 
 def checkout(request):
+    data = request.GET
+    print(data)
+    confirmed = data.get('confirmed')
+    if confirmed == "yesss":
+        user = request.session.get('user')
+        if user is None:
+            return HttpResponse(status=403)
+        else:
+            # Delete all the items from the cart
+            c = Cart.objects.filter(user=user)
+            c.delete()
+            return HttpResponse(status=200)
     return render(request, 'checkout.html')
 
 
@@ -18,9 +30,9 @@ def home(request):
 
 
 def beverages(request):
-    cold_coffee = Product.objects.filter(subcategory="cold_coffee")
+    cold_coffee = Product.objects.filter(subcategory="coldcoffee")
     cold_coffee = list(cold_coffee)
-    hot_coffee = Product.objects.filter(subcategory="hot_coffee")
+    hot_coffee = Product.objects.filter(subcategory="hotcoffee")
     hot_coffee = list(hot_coffee)
     mocktails = Product.objects.filter(subcategory="mocktails")
     mocktails = list(mocktails)
@@ -57,16 +69,21 @@ def cart(request):
         if user is None:
             redirect('/login')
         data = request.POST
-        print(data)
         id = int(data.get('cart_id'))
-        obj = Product.objects.get(id=id)
-        try:
-            cartObj = Cart.objects.get(productName=obj.productName, user=user)
-            cartObj.quantity += 1
-            cartObj.save()
-        except:
-            cartObj = Cart.objects.create(productName=obj.productName,price=obj.price,description=obj.description,image=obj.image,category=obj.category,subcategory=obj.subcategory,quantity=1,user=user)
-            cartObj.save()
+        incart = data.get('incart')
+        if incart == "yes":
+            obj = Cart.objects.get(id=id)
+            obj.quantity += 1
+            obj.save()
+        else:
+            obj = Product.objects.get(id=id)
+            try:
+                cartObj = Cart.objects.get(productName=obj.productName, user=user)
+                cartObj.quantity += 1
+                cartObj.save()
+            except:
+                cartObj = Cart.objects.create(productName=obj.productName,price=obj.price,description=obj.description,image=obj.image,category=obj.category,subcategory=obj.subcategory,quantity=1,user=user)
+                cartObj.save()
         return redirect(request.META.get('HTTP_REFERER'))
     user = request.session.get('user')
     if user is None:
@@ -74,11 +91,12 @@ def cart(request):
     all = list(Cart.objects.filter(user=user).all())
     total = None
     if len(all) < 1:
-        all = None
+        all = False
     else:
         total = 0
         for i in all:
             total = total + (i.price * i.quantity)
+    print(all)
     return render(request, 'cart.html', {"data": all, 'total': total})
 
 

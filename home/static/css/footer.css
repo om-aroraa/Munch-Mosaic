@@ -15,6 +15,21 @@
     border-radius: 20px;
 }
 
+p a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: Footlight MT Light;
+}
+
+p a:visited {
+    color: #fff;
+}
+
+p a:hover {
+    color: #fa768e;
+}
+
 .sections {
     display: flex;
     justify-content: space-around;
@@ -56,3 +71,12 @@ ul {
     list-style-type: none;
 }
 
+.back-to-top {
+    display: block;
+    width: 100%;
+    text-align: end;
+    font-size: 1em;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: none;
+}

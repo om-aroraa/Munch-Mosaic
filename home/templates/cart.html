@@ -11,41 +11,67 @@
 <body>
     {% include "navbar.html" %}
     {% include "cursor.html" %}
-    <h1>Checkout</h1>
-    
+
     {% if data %}
-    <table>
-        <tr>
-            <th>Product Name</th>
-            <th>Quantity</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Remove?</th>
-        </tr>
+    <!-- <h1>Checkout</h1> -->
+    <div class="cart-body">
+        <main class="table">
+            <section class="table-header">
+                <h1>Flavorful Farewell: Finalize Your Order!</h1>
+            </section>
+            <section class="table-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Remove?</th>
+                        </tr>
+                    </thead>
+                    {% for item in data %}
 
-        {% for item in data %}  
+                    <tr>
+                        <td class="pname productname">{{ item.productName }}</td>
+                        <td>{{ item.price }}</td>
 
-        <tr>
-            <td>{{ item.productName }}</td>
-            <td>{{ item.quantity }}</td>
-            <td><img src="/{{ item.image }}"></img></td>
-            <td>{{ item.description }}</td>
-            <td>{{ item.price }}</td>
-            <td><button onclick="deleteItem('{{ item.id }}')">Yes!</button></td>
-        </tr>
-        {% endfor %}
-    </table>
-    <h2>Total: {{ total }}</h2>
-    <form action="/checkout" method="POST">
-        {% csrf_token %}
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="text" name="address" placeholder="Address" required>
-        <input type="text" name="phone" placeholder="Phone" required>
-        <input type="submit" value="Place Order">
-    </form>
+                        <td><img src="/{{ item.image }}"></img></td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.quantity }}</td>
+
+                        <td><button onclick="deleteItem('{{ item.id }}')" class="cart-button">Remove</button>
+                            <form method="POST" action="/cart/">
+                                {% csrf_token %}
+                                <input type="hidden" name="cart_id" value="{{ item.id }}">
+                                <input type="hidden" name="incart" value="yes">
+                                <button class="cart-button" type="submit" name="cart">Add More</button>
+                            </form>
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+                </table>
+                <section class="table-header table-body total"><h2>Total: {{ total }}</h2>
+                    <a href="/checkout" class="cart-button">Checkout</a>
+    </section>
+            </section>
+        </main>
+</div>
+        <!-- <form action="/checkout" method="POST" class="cart-form">
+            {% csrf_token %}
+            <h2>Flavorful Farewell: Finalize Your Order!</h2>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="address" placeholder="Address" required class="address-cart">
+            <input type="text" name="phone" placeholder="Phone" required>
+            <input type="submit" value="Place Order">
+        </form> -->
+
     {% else %}
-    <h2>No items</h2>
+    <center>
+        <h2 style="color: white;">Cart Hungry for Your Picks!</h2>
+    </center>
     {% endif %}
 
     <script>
