@@ -1,23 +1,23 @@
 
 
 body {
-    background: url("/static/imgs/beveragesbanner1.jpg") center / cover no-repeat ;
-    backdrop-filter: blur (1.17rem);
+    background: url("/static/imgs/cartemptybg3.jpg") center / cover no-repeat ;
     color: #000000;
     font-family: garamond;
     cursor: none;
 }
 
 
-h1 {
+ h1{
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 60vh;    
-    color: #fff;
-    font-family: garamond;
+    margin-bottom: 80vh;    
+    color: rgb(179, 53, 72)   ;
+    font-family: Footlight MT Light;
     font-size: 40px;
     font-weight: bold;
 }
+
 
 td img {
     width: 100px;
@@ -103,7 +103,7 @@ td,
 th {
     border-collapse: collapse;
     padding: 1rem 2.8rem;
-    width: 100%;
+    /* width: 100%; */
 }
 
 

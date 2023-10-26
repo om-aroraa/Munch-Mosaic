@@ -36,6 +36,7 @@ body {
 .imbanner {
     margin-top: 0;
     background-image: url("/static/imgs/banner6.jpg");
+    /* filter: grayscale(1  0%); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -124,23 +125,23 @@ body {
     margin-top: 0;
     padding-top: 10px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 900;
     letter-spacing: 3px;
     text-shadow: 1px 1px 1px #0a0a0a;
 }
 
 .cover h2 {
-    color: #b61c1c;
+    color: #b36565;
     font-family: Garamond;
     font-style: italic;
-    text-decoration: underline; 
+    letter-spacing: 2px;
     font-size: 30px;
     text-align: center;
     margin-top: 0;
     padding-top: 40px;
     text-transform: lowercase;
-    font-weight: 500;
-    letter-spacing: 3px;
+    font-weight: 900;
+    letter-spacing: 4px;
     text-shadow: 1px 1px 1px #000000;
 }
 
@@ -275,20 +276,22 @@ ul {
 }
 
 .text-box h2 {
+    color: rgb(169, 98, 98);
     margin: 0 0 10px;
     font-size: 2.5em;
-    font-family: Garamond;
+    font-family: Footlight MT Light;
     font-style: italic;
-    text-transform: lowercase;
-    font-weight: 500;
+    /* text-transform: lowercase;  */
+    font-weight: 900;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px #000000;
 }
 
 .text-box p {
-    margin: 0 0 10px;
-    font-size: 1em;
-    font-weight: 100;
+    margin:  20px 0;
+    word-spacing: 2px;
+    font-size: 1.2em;
+    font-weight: 700;
     text-shadow: 2px 2px 4px #000000;
     color: #faf7f7;
 

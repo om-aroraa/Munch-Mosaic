@@ -5,7 +5,7 @@
 body{
     background: #000;
     color: white;
-        background-image: url("/static/imgs/banner6.jpg");
+        background-image: url("/static/imgs/loginbanner4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -19,9 +19,13 @@ body{
 }
 
 .login-container {
+    position: relative;
+    left: 150px;
+    top: 5vh;
+    opacity: .9;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 90vh;
     width: 100vh;
@@ -38,7 +42,7 @@ body{
 }
 
 .title {
-    color: #f25774;
+    color: wheat;
     margin: 2rem 0;
     font-size: 2.2rem;
 }
@@ -66,7 +70,7 @@ body{
 }
 
 .username, .password, .email {
-    border-bottom: 1px solid #e2153b;
+    border-bottom: 1px solid #9b5a5a;
     transition: all 400ms;
 }
 
@@ -81,7 +85,7 @@ body{
     height: 3rem;
     width: 20rem;
     margin-top: 3rem;
-    background-color: #e2153b;
+    background-color: rgb(133, 82, 82);
     border-radius: 0.5rem;
     border: none;
     font-size: 1.2rem;
@@ -95,9 +99,9 @@ body{
 }
 
 form a{
-    color: #f25774;
-    text-decoration: none;
-    font-size: 1.2rem;
+    color: wheat;
+    /* text-decoration: none; */
+    font-size: 1.6rem;
     margin-top: 1rem;
     transition: all 400ms;
 }

@@ -43,7 +43,7 @@ h2 {
 }
 
 #snacks-bgimg {
-    background-image: url(/static/imgs/snacks2.jpg);
+    background-image: url(/static/imgs/snacksbanner2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -51,10 +51,10 @@ h2 {
 }
 
 #deserts-bgimg {
-    background-image: url(/static/imgs/desserts2.jpg);
+    background-image: url(/static/imgs/loginbanner2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: right;
     height: 25vh;
 }
 
@@ -165,7 +165,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #1F1B18;
-    color: #ff5d78;
+    color: #ffffff;
     cursor: none;
     font-family: 'Garamond', serif;
     font-size: 1.1rem;
@@ -217,8 +217,9 @@ body {
 .card-description {
     display: flex;
     justify-content: center;
+    font-size: 1rem;
     /* display: block; */
-    font-size: var(--small--font-size);
+    /* font-size: var(--small--font-size); */
     margin-bottom: .5rem;
     font-family: Garamond;
     font-style: italic;
