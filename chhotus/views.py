@@ -9,22 +9,6 @@ def navbar(request):
     return render(request, 'navbar.html')
 
 
-def checkout(request):
-    data = request.GET
-    print(data)
-    confirmed = data.get('confirmed')
-    if confirmed == "yesss":
-        user = request.session.get('user')
-        if user is None:
-            return HttpResponse(status=403)
-        else:
-            # Delete all the items from the cart
-            c = Cart.objects.filter(user=user)
-            c.delete()
-            return HttpResponse(status=200)
-    return render(request, 'checkout.html')
-
-
 def home(request):
     return render(request, 'home.html')
 
@@ -223,3 +207,19 @@ def delete_item(request):
 
 def serve_image(request, filename):
     return redirect('/static/imgs/' + filename)
+
+
+def checkout(request):
+    data = request.GET
+    print(data)
+    confirmed = data.get('confirmed')
+    if confirmed == "yesss":
+        user = request.session.get('user')
+        if user is None:
+            return HttpResponse(status=403)
+        else:
+            # Delete all the items from the cart
+            c = Cart.objects.filter(user=user)
+            c.delete()
+            return HttpResponse(status=200)
+    return render(request, 'checkout.html')

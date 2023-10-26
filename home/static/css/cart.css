@@ -7,10 +7,10 @@ body {
     cursor: none;
 }
 
-h2 {
+h1 {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 60vh;
+    margin-bottom: 60vh;    
     color: #fff;
     font-family: garamond;
     font-size: 40px;
@@ -26,7 +26,7 @@ td img {
 .cart-body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     min-height: 100vh;
     background: url("/static/imgs/banner6.jpg") center / cover no-repeat;
 }
