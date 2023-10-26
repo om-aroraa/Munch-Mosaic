@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from home.models import *
-from django.contrib import messages
+from cryptography.fernet import Fernet
 import re
 
 
@@ -51,7 +51,7 @@ def cart(request):
     if request.method == "POST":
         user = request.session.get('user')
         if user is None:
-            redirect('/login')
+            return redirect('/login?synx=1')
         data = request.POST
         id = int(data.get('cart_id'))
         incart = data.get('incart')
@@ -95,6 +95,8 @@ def register(request):
         if obj.exists():
             return render(request, 'register.html', {'msg': "Email already exists"})
 
+        fern = Fernet(b'nNjpIl9Ax2LRtm-p6ryCRZ8lRsL0DtuY0f9JeAe2wG0=')
+        password = fern.encrypt(password.encode())
         obj = User.objects.create(name=name, email=email, password=password)
         obj.save()
         request.session['user'] = name
@@ -127,17 +129,18 @@ def login(request):
         if len(obj) == 0:
             # If the email does not exist, render the login page with an error message
             return render(request, 'login.html', {'msg': "Email does not exist"})
-        # Check if a user with the given email and password exists in the database
-        obj = User.objects.filter(email=email, password=password)
-        if len(obj) == 1:
-            # If the email and password are valid, redirect to the home page
-            user = User.objects.get(email=email)
-            request.session['user'] = user.name
-            return redirect('/')
-        else:
-            # If the password is invalid, render the login page with an error message
+        fern = Fernet(b'nNjpIl9Ax2LRtm-p6ryCRZ8lRsL0DtuY0f9JeAe2wG0=')
+        pas = obj[0].password
+        pas = fern.decrypt(eval(pas)).decode()
+        if pas != password:
             return render(request, 'login.html', {'msg': "Invalid Password"})
+        else:
+            request.session['user'] = obj[0].name
+            return redirect('/')
     # If the request method is not POST, render the login page
+    synx = request.GET.get('synx')
+    if synx is not None:
+        return render(request, 'login.html', {'msg': "Please login to continue"})
     return render(request, 'login.html')
 
 
@@ -191,7 +194,7 @@ def delete_item(request):
                 obj.quantity -= 1
                 obj.save()
             return redirect(path)
-        elif user == 'admin':
+        elif user == 'Admin':
             try:
                 prodObj = Product.objects.get(id=id)
                 Cart.objects.filter(productName=prodObj.productName).delete()
