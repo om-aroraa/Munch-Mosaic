@@ -1,12 +1,13 @@
 
 
 body {
-    background: url("/static/imgs/cartemptybg.jpg") center / cover no-repeat ;
+    background: url("/static/imgs/beveragesbanner1.jpg") center / cover no-repeat ;
     backdrop-filter: blur (1.17rem);
     color: #000000;
     font-family: garamond;
     cursor: none;
 }
+
 
 h1 {
     text-align: center;
