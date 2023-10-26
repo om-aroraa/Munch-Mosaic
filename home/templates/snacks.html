@@ -44,7 +44,7 @@
                             <input type="hidden" name="cart_id" value="{{ i.id }}">
                             <button class="card-button" type="submit" name="cart">Add to Cart</button>
                         </form> 
-                        {% if request.session.user == 'admin' %}
+                        {% if request.session.user == 'Admin' %}
                         <button class="card-button" onclick="deleteItem('{{ i.id }}', '{{ request.path }}')">
                             Delete this item
                         </button>
