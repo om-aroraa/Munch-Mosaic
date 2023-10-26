@@ -4,7 +4,6 @@ from home.models import *
 from cryptography.fernet import Fernet
 import re
 
-
 def navbar(request):
     return render(request, 'navbar.html')
 
@@ -80,7 +79,6 @@ def cart(request):
         total = 0
         for i in all:
             total = total + (i.price * i.quantity)
-    print(all)
     return render(request, 'cart.html', {"data": all, 'total': total})
 
 
@@ -183,11 +181,9 @@ def delete_item(request):
     user = request.session.get('user')
     id = request.GET.get('id')
     path = request.GET.get('path')
-    print(user, id, path)
     if user is not None and id is not None and path is not None:
         if path == "/cart/":
             obj = Cart.objects.get(id=id)
-            print(obj)
             if obj.quantity <= 1:
                 obj.delete()
             else:
@@ -214,7 +210,6 @@ def serve_image(request, filename):
 
 def checkout(request):
     data = request.GET
-    print(data)
     confirmed = data.get('confirmed')
     if confirmed == "yesss":
         user = request.session.get('user')

@@ -135,11 +135,11 @@ body {
     font-family: Garamond;
     font-style: italic;
     letter-spacing: 2px;
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
     margin-top: 0;
     padding-top: 40px;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     font-weight: 900;
     letter-spacing: 4px;
     text-shadow: 1px 1px 1px #000000;
